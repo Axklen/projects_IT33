@@ -18,12 +18,20 @@ listings-no-page-break: true
 toc-own-page: true
 footnotes-pretty: true
 header-includes: |
-    \usepackage{sectsty}
+    \usepackage{sectsty, xcolor}
     \sectionfont{\clearpage}
-    \hypersetup{colorlinks=true,
-            allbordercolors={0 0 0},
-            pdfborderstyle={/S/U/W 1}}
+    \hypersetup{
+      colorlinks=false,
+      pdfborderstyle={/S/U/W 1},  % underline links instead of boxes
+      linkbordercolor=white,      % color of internal links
+      citebordercolor=green,      % color of links to bibliography
+      filebordercolor=magenta,    % color of file links
+      urlbordercolor=black        % color of external links
+    }
 ...
+
+
+
 
 # Axinsta
 
