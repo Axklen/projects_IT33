@@ -52,14 +52,10 @@ Ich habe hierbei mit Gnu/Linux - Fedora Silverblue - gearbeitet. Um den Oracle
 SQL Server aufzusetzen habe ich Podman, also ein Containertool, verwendet um
 den Server in einem Container aufzusetzen.
 
-Zur Dokumentation habe ich Markdown benutzt und dieses mit 
+Zur Dokumentation habe ich Markdown benutzt und dieses mit
 dem Tool [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) in eine PDF-Datei gerendert.
 
 ```{.bash caption="Eisvogel cl-Befehl"}
-pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
-```
-
-```zsh
 pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
 ```
 
