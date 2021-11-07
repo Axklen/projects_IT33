@@ -1,4 +1,4 @@
-# Documentation for my Oracle SQL projekt @Cimdata
+# Documentation for my Oracle SQL project @Cimdata
 
 ## Used Tools
 

@@ -56,7 +56,7 @@ Die SQL-Scripte sollen:
   - einige Datenabfragen realisieren
   - Datenbank löschen
 
-Ich habe hierbei mit Gnu/Linux - Fedora Silverblue - gearbeitet. Um den Oracle
+Ich habe hierbei mit Gnu/Linux - Fedora Silverblue[^e] - gearbeitet. Um den Oracle
 SQL Server aufzusetzen habe ich Podman, also ein Containertool, verwendet um
 den Server in einem Container aufzusetzen.
 
@@ -66,6 +66,8 @@ dem Tool [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) in ei
 ```{.bash caption="Eisvogel cl-Befehl"}
 pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
 ```
+
+[^e]: Immutable OS - Gnome DE
 
 TODO:presentation
 
