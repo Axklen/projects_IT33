@@ -6,11 +6,13 @@ subject: "Markdown"
 keywords: [Documentation, Axinsta]
 subtitle: "Dokumentation"
 lang: "de"
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "360049"
+titlepage-rule-height: 0
 titlepage: true,
-titlepage-rule-color: "01a4ad"
-titlepage-text-color: "004857"
-titlepage-background: "backgrounds/bgtitle.pdf"
-header-left: "\\leftmark"
+titlepage-background: "backgrounds/bgtitleblue.pdf"
+header-left: "\\hspace{1cm}"
+header-center: "\\leftmark"
 footer-left: "\\thetitle"
 footer-center: "\\theauthor"
 footer-right: "Seite \\thepage"
@@ -37,8 +39,9 @@ header-includes: |
 Diese Dokumentation wurde für mein Projekt bei [Cimdata](https://www.cimdata.de/)
 mit Oracle SQL erstellt.
 
-Aufgabe ist es, eine kleine Datenbank anzulegen und mittels SQL-Scripten via
-dem commandline-tool sqlplus/sqlcl ein kleines "Programm" zu erstellen.
+Aufgabe ist es, eine Datenbank anzulegen und mit Hilfe von SQL-Scripten via
+dem cl-tool sqlplus/sqlcl ein kleines "Programm" zu erstellen. Zusätzlich ist
+eine Dokumentation sowie Präsentation gewünscht.
 
 Die SQL-Scripte sollen:
 
@@ -50,11 +53,11 @@ Die SQL-Scripte sollen:
   - Datenbank aufsetzten
   - Datensätze löschen
   - Datensätze anlegen
-  - einige Datenabfragen realisieren
+  - Datenabfragen realisieren
   - Datenbank löschen
 
 Ich habe hierbei mit Gnu/Linux - Fedora Silverblue[^e] - gearbeitet. Um den Oracle
-SQL Server aufzusetzen habe ich Podman, also ein Containertool, verwendet um
+SQL Server aufzusetzen benutze ich [Podman](https://podman.io/), also ein Containertool - verwendet um
 den Server in einem Container aufzusetzen.
 
 Zur Dokumentation habe ich Markdown benutzt und dieses mit
@@ -64,7 +67,7 @@ dem Tool [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) in ei
 pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
 ```
 
-[^e]: Immutable OS - Gnome DE
+[^e]: Immutable OS
 
 TODO:presentation
 
@@ -73,34 +76,6 @@ TODO:presentation
 Entwickeln Sie eine Datenbank für die Firma: blahhhhh
 
 ## Grobstruktur
-
-Die "Cocktail – Event Service" wurde von 2 IHK-Auszubildenden zur Fachkraft im
-Gastgewerbe ins Leben gerufen. Zunächst stand nur der Spaß im Vordergrund,
-um bei gelegentlichen Veranstaltungen, die im Freundeskreis stattfanden,
-bei der Gestaltung mitzuwirken. Dann kamen die ersten privaten
-Feste im familiären Umfeld dazu.
-Nach erfolgreichem Bestehen der IHK-Prüfung kam die Idee auf, dies
-professioneller zu betreiben. Es kam zur Gründung der "Cocktail –Event Service".
-Die Cocktails werden mehr oder weniger nach einem "einheitlichen" Rezept
-zubereitet. Soll heißen, dass beispielsweise ein bestimmter Cocktail durch beide
-Eigentümer unterschiedlich zubereitet wird.
-So variieren die Alkoholmengen, die Beilagen und die Gläser bei ein und
-demselben Cocktail. Was im privaten Umfeld noch akzeptiert wurde,
-war aber öfters Kritikpunkt bei den Kunden. Leider konnte nicht immer über die
-Gesamtdauer der Veranstaltung bestimmte Cocktails angeboten werden, da die dazu
-benötigten Zutaten ausgingen. Aber auch bei der benötigten Anzahl an
-Gläsern hapert es auch schon mal.
-
-Zum Glück musste erst eine Veranstaltung wegen einer Doppelplanung absagt werden.
-Glücklicherweise hatte der Kunde im Vorfeld 2 Alternativ-Termine genannt.
-Die "Cocktail – Event Service" benötigt eine Datenbank zur elektronischen
-Verwaltung folgender Punkte:
-
-- Erfassen von Cocktails aus aller Welt mit einheitlicher Zutatenliste,
-  Erscheinungsbild und Zubereitung
-
-- In einer weiteren Ausbaustufe ist geplant:
-  Terminplanung von Event-Veranstaltungen
 
 ## Feinstruktur
 
@@ -134,7 +109,7 @@ Beschreibung der Art vom Projekt
 
 ![ER-Model](img/testpdf.pdf)
 
-### Detaildartsellung
+### Detaildarstellung
 
 ## Relationenmodell
 
