@@ -1,9 +1,9 @@
 ---
-title: "AxIga Documentation"
+title: "Seismik Documentation"
 author: [Daniel Schwarz]
 date: "07.11.2021"
 subject: "Markdown"
-keywords: [Documentation, AxIga]
+keywords: [Documentation, Seismik]
 subtitle: "Dokumentation"
 lang: "de"
 titlepage-text-color: "FFFFFF"
@@ -37,7 +37,7 @@ header-includes: |
   ```
 ...
 
-# AxIga
+# Seismik
 
 ## Vorwort
 
@@ -91,8 +91,12 @@ Hierfür soll verstärkt auf Anonymität und Datenschutz für zukünftige Benutz
 gesetzt werden.
 
 Das Produkt soll in einer ersten Version als Prototyp dienen, um notwendige
-Schnittstellen, zu bereits vorhanden Backendsystemen des Kunden, parallel zum
-späteren Ausbau der Datenbank voranzutreiben. 
+Schnittstellen, zu bereits vorhanden Backendsystemen des Kunden auszubauen und anpassen zu können.
+
+**Begriffsklärung**
+[Instagram](https://www.instagram.com/) ist ein soziales Netzwerk, ähnlich
+[Twitter](https://twitter.com) oder [Facebook](https://facebook.com/). Der Fokus liegt vor allem auf Video- und
+Fotos-Sharing. 
 
 ## Feinstruktur
 
