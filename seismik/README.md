@@ -1,4 +1,4 @@
-# Axinsta
+# Seismik
 
 A small (oracle)SQL project for my class at Cimdata
 
