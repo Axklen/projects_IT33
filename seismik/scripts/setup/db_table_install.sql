@@ -27,7 +27,9 @@ CREATE TABLE users
             CONSTRAINT pk_users_id PRIMARY KEY,
   username VARCHAR(50) UNIQUE NOT NULL,
   passwd VARCHAR(255) NOT NULL,
-  created_at TIMESTAMP DEFAULT sysdate
+  created_at TIMESTAMP DEFAULT sysdate,
+  CONSTRAINT ck_users_pwd_length CHECK (LENGTHB(passwd) >= 8),
+  CONSTRAINT ck_users_username_length CHECK (LENGTHB(username) >= 4)
 );
 
 CREATE TABLE tags

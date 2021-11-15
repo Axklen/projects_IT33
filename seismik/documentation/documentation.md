@@ -110,13 +110,13 @@ verdienen in dem Sie bestimmte Kriterien erfüllen.
 Das Produkt soll in einer ersten Version als Prototyp dienen, um notwendige
 Schnittstellen, zu bereits vorhanden Backendsystemen des Kunden auszubauen und anpassen zu können.
 Später wird das Projekt dann im Umfang ausgebaut und auf verschiedenen
-Frontendapps verteilt. Angedacht sind Smartphone-apps, eine Web-app als SaaS
+Frontendapps verteilt. Angedacht sind Mobile-apps, eine Web-app als SaaS
 sowie eine Desktop-app für die gängigen Betriebssysteme.
 
 ### Produktname
 
 Für das Projekt habe ich den Namen "**SEISMIK**" gewählt. In der Überzeugung das wir
-mit diesem Produkt den Mark der Social-Media-Apps "erschüttern" werden.
+mit diesem Produkt den Markt der Social-Media-Apps "erschüttern" werden.
 
 ### Logo
 
@@ -125,10 +125,10 @@ von einem Grafik-Designer entwickeln lassen und lizenziert.
 
 ### Funktionen
 
-Benutzer sollen sich Registrieren können und anschließend ein/ausloggen. Sie
-können dann posts erstellen in deren Inhalt es sich - in der ersten Ausbaustufe -
+Benutzer sollen sich Registrieren können und anschließend ein- bzw. ausloggen. Sie
+können dann Posts erstellen in deren Inhalt es sich - in der ersten Ausbaustufe -
 vor allem um Bilder handelt.
-Die Benutzer sollen Posts von anderen Benutzern "liken" und kommentieren können.
+Die Benutzer sollen Posts von anderen Benutzern liken und kommentieren können.
 
 ## Feinstruktur
 
