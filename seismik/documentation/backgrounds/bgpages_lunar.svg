@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg656"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="bgpages_lunar.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview658"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.77771465"
+     inkscape:cx="420.4627"
+     inkscape:cy="660.26788"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs653" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       style="fill:none;opacity:0.08"
+       id="g11199"
+       transform="matrix(1.1677473,0,0,1.1677473,19.869321,235.26339)">
+      <path
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         d="M 26.6046,3.72414 C 25.1108,2.23101 22.6895,2.2315 21.1964,3.72525 L 8.73506,16.1917 8.72444,16.1886 8.68506,16.1928 c 0.01622,0.0078 0.03214,0.0155 0.04774,0.0233 -2.18598,0.229 -3.11346,0.8859 -3.12396,1.7295 0.0037,0.3138 0.13245,0.6527 0.36894,1.0045 l -0.01137,0.0114 c 1.98728,2.9973 11.83219,6.9512 18.79719,4.2723 -5.22,2.61 -17.51334,3.1273 -21.12409,-1.9403 -0.78414,0.8483 -1.11222,1.9631 -0.98867,3.0344 0.95386,5.2574 11.61806,6.6917 22.28236,-0.9256 l 2.3077,2.3077 c -2.8716,2.9502 -7.1133,20.0867 -0.8106,17.4703 0.1495,-0.1015 0.2764,-0.1923 0.449,-0.3229 l 0.2809,-0.2652 c -0.0162,0.004 -0.0323,0.0078 -0.0483,0.0116 l 16.88,-15.9357 c 1.5673,-1.4797 1.6028,-3.9616 0.0783,-5.4855 z m -1.8382,5.19329 0.5769,-2.30769 0.5769,2.30769 1.7308,0.57693 -1.7308,0.57694 -0.5769,2.3077 -0.5769,-2.3077 -1.7308,-0.57694 z m -7.1409,7.53337 0.3846,-1.5385 0.3846,1.5385 1.1539,0.3846 -1.1539,0.3846 -0.3846,1.5385 -0.3846,-1.5385 -1.1538,-0.3846 z m 13.3956,12.9769 -0.3846,1.5384 -1.1538,0.3847 1.1538,0.3846 0.3846,1.5384 0.3846,-1.5384 1.1539,-0.3846 -1.1539,-0.3847 z"
+         class="ccustom"
+         fill="#007dfc"
+         id="path931" />
+      <path
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         d="m 45.2918,5.25128 c -3.6087,0 -7.031,1.60291 -9.3413,4.37521 l -8.219,9.86291 4.746,-7.1191 -7.878,3.3763 c -1.0005,0.4288 -1.2515,1.7323 -0.4819,2.502 l 2.5352,2.5351 -1.2944,1.5533 2.8477,2.8476 1.5532,-1.2944 2.5352,2.5352 c 0.7696,0.7696 2.0732,0.5186 2.5019,-0.4818 l 3.3763,-7.878 -7.119,4.746 9.8629,-8.2191 C 43.6889,12.2823 45.2918,8.86 45.2918,5.25128 Z m -7.8309,7.83112 c 0.7863,0.7863 2.0612,0.7863 2.8476,0 0.7863,-0.7864 0.7863,-2.0613 0,-2.8476 -0.7864,-0.78639 -2.0613,-0.78639 -2.8476,0 -0.7864,0.7863 -0.7864,2.0612 0,2.8476 z"
+         class="ccompli2"
+         fill="#003a74"
+         id="path951" />
+      <path
+         opacity="0.6"
+         d="M 3.54793,21.1609 C 5.43339,27.6207 16.8966,27.2839 24.7614,23.2348 19.495,25.8664 7.03695,26.369 3.54793,21.1609 Z"
+         fill="#424242"
+         id="path953" />
+      <path
+         opacity="0.6"
+         d="m 26.4303,43.1803 c -5.3108,2.2046 -3.1348,-9.6158 -0.6004,-15.1558 -1.8474,4.9242 -3.4244,15.7793 1.3303,14.5677 l -0.2809,0.2652 c -0.1726,0.1306 -0.2995,0.2214 -0.449,0.3229 z"
+         fill="#424242"
+         id="path955" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:28.4319px;line-height:1.25;font-family:sans-serif;fill:#007dfc;fill-opacity:1;stroke:none;stroke-width:1.18466"
+         x="55.745461"
+         y="32.603252"
+         id="text6704"><tspan
+           sodipodi:role="line"
+           id="tspan6702"
+           x="55.745461"
+           y="32.603252"
+           style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:28.4319px;font-family:'Liga SFMono Nerd Font';-inkscape-font-specification:'Liga SFMono Nerd Font Heavy';fill:#007dfc;fill-opacity:1;stroke-width:1.18466">LUNAR</tspan></text>
+    </g>
+  </g>
+</svg>
