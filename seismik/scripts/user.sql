@@ -12,15 +12,45 @@ PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
 PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
 PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
 PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                                      "
-PROMPT " Bild posten | &&v_usern                        by Daniel Schwarz@IT33"
+PROMPT "                                                by Daniel Schwarz@IT33"
+PROMPT " Bild posten                                                          "
 PROMPT " ====================================================================="
+
+-- zeige Benutzer
+SELECT 
+  u.id AS "Benutzer ID",
+  u.username AS Benutzer,
+  count(p.image_url) as Bilder
+FROM 
+  users u
+JOIN
+  photos p
+ON u.id = p.user_id
+GROUP BY u.id, u.username
+ORDER BY u.id
+;
+
 PROMPT " "
-ACCEPT url PROMPT " Bitte eine Bild url angeben (https://...): "   
-
-INSERT INTO photos (image_url, user_id) VALUES ('&url', &&v_user); 
-
+ACCEPT input PROMPT " Wählen Sie eine Benutzer ID => "
+PROMPT " "
 cl scr
+
+SET TERM OFF
+
+-- garb username
+COLUMN usr NEW_VALUE v_usern
+
+SELECT username AS usr
+FROM users
+WHERE id = &input;
+
+-- garb userID
+COLUMN usrid NEW_VALUE v_user
+
+SELECT &input AS usrid FROM dual;
+
+SET TERM ON
+
 PROMPT " " 
 PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
 PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
@@ -30,11 +60,12 @@ PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
 PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
 PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
 PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                                      "
-PROMPT " Bild posten | &&v_usern                        by Daniel Schwarz@IT33"
+PROMPT "                                                by Daniel Schwarz@IT33"
+PROMPT " Bild posten | &&v_usern                                              "
 PROMPT " ====================================================================="
 PROMPT " "
 PROMPT " meine Bilder =>"
+
 SELECT
   DISTINCT p.image_url AS Bild,
   to_char(p.created_at, 'DD.MM.YYYY') AS gepostet,
@@ -49,17 +80,14 @@ LEFT JOIN likes l
 ON p.id = l.photo_id
 WHERE u.id = &input
 GROUP BY p.image_url, c.comment_text, p.created_at;
+
 PROMPT " "
 PROMPT " "
 PROMPT " "
 PROMPT " wie soll es weitergehen?"
 PROMPT "=========================================="
 PROMPT " "
-PROMPT " [ 1 ] => noch ein Bild als &&v_usern posten?"
-PROMPT " [ 2 ] => einen anderen Benutzer wählen: "
-PROMPT " [ 3 ] => dieses Bild taggen"
-PROMPT " --------------------------------------------------------------------"
-PROMPT " [ z ] => ZURÜCK"
+PROMPT " [ u ] => Benutzer wechseln"
 PROMPT " [ h ] => ZURÜCK zum Hauptmenü"
 PROMPT " [ q ] => Anwendung BEENDEN"
 PROMPT " "
@@ -73,16 +101,13 @@ COLUMN virt_col new_value v_choice
 
 SELECT
    CASE '&input2'
-   WHEN '1' THEN 'post_as_user.sql'
-   WHEN '2' THEN 'post.sql'
-   WHEN '3' THEN 'tagging.sql'
-   WHEN 'z' THEN 'menu.sql'
-   WHEN 'h' THEN '../menu.sql'
-   WHEN 'q' THEN '../quit.sql'
+   WHEN 'u' THEN 'user.sql'
+   WHEN 'h' THEN 'menu.sql'
+   WHEN 'q' THEN 'quit.sql'
    END
 AS virt_col
 FROM dual;
 
 SET TERM ON
 
-@&v_choice
+@&v_choice 

@@ -12,8 +12,8 @@ PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
 PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
 PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
 PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                                      "
-PROMPT " TOP 5 liked Bilder                             by Daniel Schwarz@IT33"
+PROMPT "                                                by Daniel Schwarz@IT33"
+PROMPT " TOP 5 liked Bilder | &&v_usern                                       "
 PROMPT " ====================================================================="
 
 -- bilderausgabe

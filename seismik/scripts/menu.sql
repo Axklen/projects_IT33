@@ -12,15 +12,16 @@ PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
 PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
 PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
 PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                                      "
-PROMPT " Willkommen im Hauptmenu                        by Daniel Schwarz@IT33"
+PROMPT "                                                by Daniel Schwarz@IT33"
+PROMPT " Willkommen im Hauptmenu                                              "
 PROMPT " ====================================================================="
 PROMPT " "
 PROMPT " Bitte wählen Sie eine der folgenden Optionen"
 PROMPT " "
 PROMPT " [ 1 ] => Datenbankstruktur bearbeiten"
-PROMPT " [ 2 ] => LESEN spezifischer Datensätze"
-PROMPT " [ 3 ] => ÄNDERN von Datensätzen"
+PROMPT " [ 2 ] => Benuterauswahl / -wechsel"
+PROMPT " [ 3 ] => LESEN spezifischer Datensätze"
+PROMPT " [ 4 ] => ÄNDERN von Datensätzen"
 PROMPT " ---------------------------------------------------------------------"
 PROMPT " [ q ] => Anwendung BEENDEN"
 PROMPT " "
@@ -35,8 +36,9 @@ COLUMN virt_col new_value v_choice
 SELECT
    CASE '&input'
    WHEN '1' THEN 'setup/menu.sql'
-   WHEN '2' THEN 'read/menu.sql'
-   WHEN '3' THEN 'update/menu.sql'
+   WHEN '2' THEN 'user.sql'
+   WHEN '3' THEN 'read/menu.sql'
+   WHEN '4' THEN 'update/menu.sql'
    WHEN 'q' THEN 'quit.sql'
    END
 AS virt_col
