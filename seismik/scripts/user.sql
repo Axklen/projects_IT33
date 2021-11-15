@@ -49,6 +49,26 @@ COLUMN usrid NEW_VALUE v_user
 
 SELECT &input AS usrid FROM dual;
 
+-- grab followers
+
+COLUMN folc NEW_VALUE v_follower
+
+SELECT
+  count(username) AS folc
+FROM users u
+RIGHT JOIN follows f
+ON f.follower_id = u.id
+WHERE f.followee_id = &&v_user;
+
+-- TODO: grab followees
+
+
+
+
+
+
+
+
 SET TERM ON
 
 PROMPT " " 
@@ -61,7 +81,7 @@ PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
 PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
 PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
 PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " Bild posten | &&v_usern                                              "
+PROMPT " Bild posten | &&v_usern                                               "
 PROMPT " ====================================================================="
 PROMPT " "
 PROMPT " meine Bilder =>"

@@ -35,6 +35,10 @@ ORDER BY 3 DESC
 PROMPT " "
 ACCEPT input PROMPT " Wählen Sie eine Bild ID => "
 PROMPT " "
+
+COLUMN img NEW_VALUE v_img
+
+SELECT image_url AS img FROM photos WHERE id = &input;
 cl scr
 
 PROMPT " " 
@@ -49,18 +53,10 @@ PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
 PROMPT "                                                by Daniel Schwarz@IT33"
 PROMPT " neuste Kommentare | &&v_usern                                        "
 PROMPT " ====================================================================="
-
-SET HEA OFF 
--- SET FEED OFF
--- show selected user
-PROMPT " ausgewähltes Bild:"
-SELECT image_url AS Bild
-FROM photos
-WHERE id = &input;
-SET HEA ON 
+PROMPT " "
+PROMPT " Kommentare für Bild => &&v_img"
 
 -- show photos of user with like count and comment count
-
 SELECT 
   c.comment_text AS Kommentar,
   to_char(c.created_at, 'DD.MM.YYYY | HH24:MI:SS') AS gepostet,
