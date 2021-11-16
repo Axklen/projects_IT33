@@ -3,22 +3,19 @@ SET ECHO OFF
 SET VERIFY OFF
 SET FEEDBACK OFF
 
-PROMPT " " 
-PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
-PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
-PROMPT " | $$  \__/| $$        | $$  | $$  \__/| $$$$  /$$$$  | $$  | $$ /$$/ "
-PROMPT " |  $$$$$$ | $$$$$     | $$  |  $$$$$$ | $$ $$/$$ $$  | $$  | $$$$$/  "
-PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
-PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
-PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
-PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " neuste Kommentare | &&v_usern                                        "
-PROMPT " ====================================================================="
-PROMPT " "
--- wähle Bild 
--- zeige anzahl kommentage von bildern die auch kommentare haben
-PROMPT " Alle Bilder die Kommentare besitzen: "
+PROMPT " 﫥d.schwarz                               Axklen"
+PROMPT " ·················································" 
+PROMPT "                                                  " 
+PROMPT " ███████╗███████╗██╗███████╗███╗   ███╗██╗██╗  ██╗"
+PROMPT " ██╔════╝██╔════╝██║██╔════╝████╗ ████║██║██║ ██╔╝"
+PROMPT " ███████╗█████╗  ██║███████╗██╔████╔██║██║█████╔╝ "
+PROMPT " ╚════██║██╔══╝  ██║╚════██║██║╚██╔╝██║██║██╔═██╗ "
+PROMPT " ███████║███████╗██║███████║██║ ╚═╝ ██║██║██║  ██╗"
+PROMPT " ╚══════╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝"
+PROMPT "                                                  "
+PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
+PROMPT " ·················································"
+PROMPT " Alle Bilder die Kommentare besitzen => "
 SELECT 
   p.id AS "Bild ID",
   p.image_url AS Bild,
@@ -41,19 +38,18 @@ COLUMN img NEW_VALUE v_img
 SELECT image_url AS img FROM photos WHERE id = &input;
 cl scr
 
-PROMPT " " 
-PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
-PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
-PROMPT " | $$  \__/| $$        | $$  | $$  \__/| $$$$  /$$$$  | $$  | $$ /$$/ "
-PROMPT " |  $$$$$$ | $$$$$     | $$  |  $$$$$$ | $$ $$/$$ $$  | $$  | $$$$$/  "
-PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
-PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
-PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
-PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " neuste Kommentare | &&v_usern                                        "
-PROMPT " ====================================================================="
-PROMPT " "
+PROMPT " 﫥d.schwarz                               Axklen"
+PROMPT " ·················································" 
+PROMPT "                                                  " 
+PROMPT " ███████╗███████╗██╗███████╗███╗   ███╗██╗██╗  ██╗"
+PROMPT " ██╔════╝██╔════╝██║██╔════╝████╗ ████║██║██║ ██╔╝"
+PROMPT " ███████╗█████╗  ██║███████╗██╔████╔██║██║█████╔╝ "
+PROMPT " ╚════██║██╔══╝  ██║╚════██║██║╚██╔╝██║██║██╔═██╗ "
+PROMPT " ███████║███████╗██║███████║██║ ╚═╝ ██║██║██║  ██╗"
+PROMPT " ╚══════╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝"
+PROMPT "                                                  "
+PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
+PROMPT " ·················································"
 PROMPT " Kommentare für Bild => &&v_img"
 
 -- show photos of user with like count and comment count
@@ -74,16 +70,16 @@ PROMPT " "
 PROMPT " "
 PROMPT " "
 PROMPT " wie soll es weitergehen?"
-PROMPT "=========================================="
+PROMPT " ·················································"
 PROMPT " "
 PROMPT " [ 1 ] => einen anderes Bild wählen"
-PROMPT " --------------------------------------------------------------------"
+PROMPT " -------------------------------------------------"
 PROMPT " [ z ] => ZURÜCK"
-PROMPT " [ h ] => ZURÜCK zum Hauptmenü"
-PROMPT " [ q ] => Anwendung BEENDEN"
+PROMPT " [ h ] =>  ZURÜCK zum Hauptmenü"
+PROMPT " [ q ] =>  Anwendung BEENDEN"
 PROMPT " "
 ACCEPT input2 PROMPT " Ihre Auwahl => "
-PROMPT "=========================================="
+PROMPT " ·················································"
 
 --weiterleitung nach auswahl
 SET TERM OFF

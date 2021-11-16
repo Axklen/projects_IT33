@@ -3,18 +3,19 @@ SET ECHO OFF
 SET VERIFY OFF
 SET FEEDBACK OFF
 
-PROMPT " " 
-PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
-PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
-PROMPT " | $$  \__/| $$        | $$  | $$  \__/| $$$$  /$$$$  | $$  | $$ /$$/ "
-PROMPT " |  $$$$$$ | $$$$$     | $$  |  $$$$$$ | $$ $$/$$ $$  | $$  | $$$$$/  "
-PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
-PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
-PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
-PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " Bild posten                                                          "
-PROMPT " ====================================================================="
+PROMPT " 﫥d.schwarz                               Axklen"
+PROMPT " ·················································" 
+PROMPT "                                                  " 
+PROMPT " ███████╗███████╗██╗███████╗███╗   ███╗██╗██╗  ██╗"
+PROMPT " ██╔════╝██╔════╝██║██╔════╝████╗ ████║██║██║ ██╔╝"
+PROMPT " ███████╗█████╗  ██║███████╗██╔████╔██║██║█████╔╝ "
+PROMPT " ╚════██║██╔══╝  ██║╚════██║██║╚██╔╝██║██║██╔═██╗ "
+PROMPT " ███████║███████╗██║███████║██║ ╚═╝ ██║██║██║  ██╗"
+PROMPT " ╚══════╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝"
+PROMPT "                                                  "
+PROMPT " Login                                            "
+PROMPT " ·················································"
+PROMPT "                                                  "
 
 -- zeige Benutzer
 SELECT 
@@ -49,9 +50,8 @@ COLUMN usrid NEW_VALUE v_user
 
 SELECT &input AS usrid FROM dual;
 
--- grab followers
-
-COLUMN folc NEW_VALUE v_follower
+-- grab followees
+COLUMN folc NEW_VALUE v_following
 
 SELECT
   count(username) AS folc
@@ -60,30 +60,50 @@ RIGHT JOIN follows f
 ON f.follower_id = u.id
 WHERE f.followee_id = &&v_user;
 
--- TODO: grab followees
+-- grab followers
+COLUMN fole NEW_VALUE v_follower
 
+SELECT
+  count(username) AS fole
+FROM users u
+RIGHT JOIN follows f
+ON f.followee_id = u.id
+WHERE f.follower_id = &&v_user;
 
+-- grab imagecount
+COLUMN imgc NEW_VALUE v_img_anz
 
+SELECT
+  count(image_url) AS imgc
+FROM users u
+RIGHT JOIN photos p
+ON p.user_id = u.id
+WHERE p.user_id = &&v_user;
 
+-- grab commentcount
+COLUMN comc NEW_VALUE v_comments
 
-
-
+SELECT
+  count(comment_text) AS comc
+FROM users u
+RIGHT JOIN comments c
+ON c.user_id = u.id
+WHERE c.user_id = &&v_user;
 
 SET TERM ON
 
-PROMPT " " 
-PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
-PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
-PROMPT " | $$  \__/| $$        | $$  | $$  \__/| $$$$  /$$$$  | $$  | $$ /$$/ "
-PROMPT " |  $$$$$$ | $$$$$     | $$  |  $$$$$$ | $$ $$/$$ $$  | $$  | $$$$$/  "
-PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
-PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
-PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
-PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " Bild posten | &&v_usern                                               "
-PROMPT " ====================================================================="
-PROMPT " "
+PROMPT " 﫥d.schwarz                               Axklen"
+PROMPT " ·················································" 
+PROMPT "                                                  " 
+PROMPT " ███████╗███████╗██╗███████╗███╗   ███╗██╗██╗  ██╗"
+PROMPT " ██╔════╝██╔════╝██║██╔════╝████╗ ████║██║██║ ██╔╝"
+PROMPT " ███████╗█████╗  ██║███████╗██╔████╔██║██║█████╔╝ "
+PROMPT " ╚════██║██╔══╝  ██║╚════██║██║╚██╔╝██║██║██╔═██╗ "
+PROMPT " ███████║███████╗██║███████║██║ ╚═╝ ██║██║██║  ██╗"
+PROMPT " ╚══════╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝"
+PROMPT "                                                  "
+PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
+PROMPT " ·················································"
 PROMPT " meine Bilder =>"
 
 SELECT
@@ -105,14 +125,14 @@ PROMPT " "
 PROMPT " "
 PROMPT " "
 PROMPT " wie soll es weitergehen?"
-PROMPT "=========================================="
+PROMPT "··················································"
 PROMPT " "
 PROMPT " [ u ] => Benutzer wechseln"
-PROMPT " [ h ] => ZURÜCK zum Hauptmenü"
-PROMPT " [ q ] => Anwendung BEENDEN"
+PROMPT " [ h ] =>  ZURÜCK zum Hauptmenü"
+PROMPT " [ q ] =>  Anwendung BEENDEN"
 PROMPT " "
 ACCEPT input2 PROMPT " Ihre Auwahl => "
-PROMPT "=========================================="
+PROMPT "··················································"
 
 --weiterleitung nach auswahl
 SET TERM OFF

@@ -3,36 +3,37 @@ SET ECHO OFF
 SET VERIFY OFF
 SET FEEDBACK OFF
 
-PROMPT " " 
-PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
-PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
-PROMPT " | $$  \__/| $$        | $$  | $$  \__/| $$$$  /$$$$  | $$  | $$ /$$/ "
-PROMPT " |  $$$$$$ | $$$$$     | $$  |  $$$$$$ | $$ $$/$$ $$  | $$  | $$$$$/  "
-PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
-PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
-PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
-PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " Bild posten | &&v_usern                                              "
-PROMPT " ====================================================================="
+PROMPT " 﫥d.schwarz                               Axklen"
+PROMPT " ·················································" 
+PROMPT "                                                  " 
+PROMPT " ███████╗███████╗██╗███████╗███╗   ███╗██╗██╗  ██╗"
+PROMPT " ██╔════╝██╔════╝██║██╔════╝████╗ ████║██║██║ ██╔╝"
+PROMPT " ███████╗█████╗  ██║███████╗██╔████╔██║██║█████╔╝ "
+PROMPT " ╚════██║██╔══╝  ██║╚════██║██║╚██╔╝██║██║██╔═██╗ "
+PROMPT " ███████║███████╗██║███████║██║ ╚═╝ ██║██║██║  ██╗"
+PROMPT " ╚══════╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝"
+PROMPT "                                                  "
+PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
+PROMPT " ·················································"
+PROMPT " Bild posten =>"
 PROMPT " "
 ACCEPT url PROMPT " Bitte eine Bild url angeben (https://...): "   
 
 INSERT INTO photos (image_url, user_id) VALUES ('&url', &&v_user); 
 
-PROMPT " " 
-PROMPT "   /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$      /$$ /$$$$$$ /$$   /$$"
-PROMPT "  /$$__  $$| $$_____/|_  $$_/ /$$__  $$| $$$    /$$$|_  $$_/| $$  /$$/"
-PROMPT " | $$  \__/| $$        | $$  | $$  \__/| $$$$  /$$$$  | $$  | $$ /$$/ "
-PROMPT " |  $$$$$$ | $$$$$     | $$  |  $$$$$$ | $$ $$/$$ $$  | $$  | $$$$$/  "
-PROMPT "  \____  $$| $$__/     | $$   \____  $$| $$  $$$| $$  | $$  | $$  $$  "
-PROMPT "  /$$  \ $$| $$        | $$   /$$  \ $$| $$\  $ | $$  | $$  | $$\  $$ "
-PROMPT " |  $$$$$$/| $$$$$$$$ /$$$$$$|  $$$$$$/| $$ \/  | $$ /$$$$$$| $$ \  $$"
-PROMPT "  \______/ |________/|______/ \______/ |__/     |__/|______/|__/  \__/"
-PROMPT "                                                by Daniel Schwarz@IT33"
-PROMPT " Bild posten | &&v_usern                                              "
-PROMPT " ====================================================================="
-PROMPT " "
+cl scr
+PROMPT " 﫥d.schwarz                               Axklen"
+PROMPT " ·················································" 
+PROMPT "                                                  " 
+PROMPT " ███████╗███████╗██╗███████╗███╗   ███╗██╗██╗  ██╗"
+PROMPT " ██╔════╝██╔════╝██║██╔════╝████╗ ████║██║██║ ██╔╝"
+PROMPT " ███████╗█████╗  ██║███████╗██╔████╔██║██║█████╔╝ "
+PROMPT " ╚════██║██╔══╝  ██║╚════██║██║╚██╔╝██║██║██╔═██╗ "
+PROMPT " ███████║███████╗██║███████║██║ ╚═╝ ██║██║██║  ██╗"
+PROMPT " ╚══════╝╚══════╝╚═╝╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝"
+PROMPT "                                                  "
+PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
+PROMPT " ·················································"
 PROMPT " meine Bilder =>"
 
 SELECT
@@ -54,17 +55,17 @@ PROMPT " "
 PROMPT " "
 PROMPT " "
 PROMPT " wie soll es weitergehen?"
-PROMPT "=========================================="
+PROMPT "··················································"
 PROMPT " "
 PROMPT " [ 1 ] => noch ein Bild als &&v_usern posten?"
 PROMPT " [ 2 ] => dieses Bild taggen"
-PROMPT " --------------------------------------------------------------------"
+PROMPT " -------------------------------------------------"
 PROMPT " [ z ] => ZURÜCK"
-PROMPT " [ h ] => ZURÜCK zum Hauptmenü"
-PROMPT " [ q ] => Anwendung BEENDEN"
+PROMPT " [ h ] =>  ZURÜCK zum Hauptmenü"
+PROMPT " [ q ] =>  Anwendung BEENDEN"
 PROMPT " "
 ACCEPT input2 PROMPT " Ihre Auwahl => "
-PROMPT "=========================================="
+PROMPT "··················································"
 
 --weiterleitung nach auswahl
 SET TERM OFF
@@ -73,7 +74,7 @@ COLUMN virt_col new_value v_choice
 
 SELECT
    CASE '&input2'
-   WHEN '1' THEN 'post_as_user.sql'
+   WHEN '1' THEN 'post.sql'
    WHEN '2' THEN 'tag.sql'
    WHEN 'z' THEN 'menu.sql'
    WHEN 'h' THEN '../menu.sql'

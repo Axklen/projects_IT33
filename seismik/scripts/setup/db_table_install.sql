@@ -102,8 +102,8 @@ CREATE TABLE photo_tags
 );
 
 PROMPT " "
-PROMPT " << finished setting up Tables >>"
-PROMPT "=========================================="
+PROMPT " ««   finished setting up Tables  »»"
+PROMPT " ·················································"
 PROMPT " "
 PROMPT " zurück zum Menü mit <enter>"
 PAUSE

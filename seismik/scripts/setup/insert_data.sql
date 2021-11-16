@@ -135,8 +135,8 @@ PROMPT "=========================================="
 COMMIT;
 
 PROMPT " "
-PROMPT " << finished inserting Dummy-Data >>"
-PROMPT "=========================================="
+PROMPT " ««   finished inserting Dummy-Data  »»"
+PROMPT " ·················································"
 PROMPT " "
 PROMPT " zurück zum Menü mit <enter>"
 PAUSE
