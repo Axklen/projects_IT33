@@ -1,7 +1,7 @@
 ---
 title: "SEISMIK Documentation"
 author: [Daniel Schwarz]
-date: "07.11.2021"
+date: "16.11.2021"
 subject: "Markdown"
 keywords: [Documentation, SEISMIK]
 subtitle: "Dokumentation"
@@ -71,6 +71,7 @@ dem Tool [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) in ei
 ```{.bash caption="Eisvogel cl-Befehl"}
 pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
 ```
+
 [^e]: Immutable OS
 
 ## Aufgabenstellung
@@ -79,12 +80,13 @@ Entwickeln Sie eine Datenbank zu einem von ihnen gewählten Thema mit den Schwer
 Konzeptueller und physischer Entwurf der Datenbank.
 
 ### Anforderungen
+
 Innerhalb der Projektwoche (Montag bis Donnerstag) soll eine Aufgabe oder abgegrenzte
 Teilaufgabe bearbeitet werden.
 Hierfür müssen folgende Projekt-Schwerpunkte umgesetzt werden:
 
 - Konzeptueller Entwurf der Datenbank, deren Ergebnis in der Dokumentation
-festgehalten wird,
+  festgehalten wird,
 - Physischer Entwurf der Datenbank, deren Ergebnis durch Skripte realisiert wird und
 - Präsentation des Projektes
 
@@ -101,8 +103,8 @@ während der Projektphase nicht möglich.
 
 ### Übersicht
 
-Der Kunde wünscht, eine europäische Konkurrenz-Entität für [Instagram](https://www.instagram.com/) 
-zu etablieren. 
+Der Kunde wünscht, eine europäische Konkurrenz-Entität für [Instagram](https://www.instagram.com/)
+zu etablieren.
 Hierfür soll verstärkt auf Anonymität, No-Tracking und Datenschutz für zukünftige Benutzer
 gesetzt werden. Zudem soll es Werbefrei gestaltet werden. User können Geld
 verdienen in dem Sie bestimmte Kriterien erfüllen.
@@ -120,7 +122,7 @@ mit diesem Produkt den Markt der Social-Media-Apps "erschüttern" werden.
 
 ### Logo
 
-Das Logo und die Corporate Identity habe ich in Abstimmung mit dem Auftraggeber 
+Das Logo und die Corporate Identity habe ich in Abstimmung mit dem Auftraggeber
 von einem Grafik-Designer entwickeln lassen und lizenziert.
 
 ### Funktionen
@@ -129,29 +131,30 @@ Benutzer sollen sich Registrieren können und anschließend ein- bzw. ausloggen.
 können dann Posts erstellen in deren Inhalt es sich - in der ersten Ausbaustufe -
 vor allem um Bilder handelt.
 Die Benutzer sollen Posts von anderen Benutzern liken und kommentieren können.
+Benutzer können andere Benutzern folgen.
 
 ## Feinstruktur
 
 ### Reference (Instagram)
 
 [Instagram](https://www.instagram.com/) ist ein soziales Netzwerk, ähnlich
-[Twitter](https://twitter.com) oder [Facebook](https://facebook.com/). Der Fokus 
-liegt hier vor allem auf Video- und Foto-Sharing. 
+[Twitter](https://twitter.com) oder [Facebook](https://facebook.com/). Der Fokus
+liegt hier vor allem auf Video- und Foto-Sharing.
 
-Mit mehr als 20 Mio. Nutzern allein in Deutschland und 150 Mio. Weltweit zählt 
+Mit mehr als 20 Mio. Nutzern allein in Deutschland und 150 Mio. Weltweit zählt
 Instagram zu einem der größeren Vertreter der Social-Media-Apps.
 
 ---
 
 Man kann es sich wie eine Art Online-Fotoalbum vorstellen, in dem man Einblicke
-in sein Leben geben kann. Es ist auf allen gängigen Plattformen erhältlich und 
+in sein Leben geben kann. Es ist auf allen gängigen Plattformen erhältlich und
 wird auch gern von Unternehmen zur Reichweitensteigerung genutzt.
 
 ![Instagram - Übersicht](img/insta_overview.png)
 
 #### Users
 
-![Instagram - Useraccount](img/insta_user.png) 
+![Instagram - Useraccount](img/insta_user.png)
 
 Benutzer laden Bilder hoch, die sie durch Tags (Hashtags) kategorisieren können.
 Diese Bilder können in Ihrer Größe verändert werden und man kann verschiedene
@@ -165,16 +168,16 @@ Farbfilter auf sie Anwenden.
 - Hochladen oder Drehen von Videos
 - Geotag-Funktion, über die eine eigene Fotokarte eines Nutzers angelegt werden kann
 - Austausch über Fotos mit anderen Usern
-- Like-Funktion in Form eines Herzes 
+- Like-Funktion in Form eines Herzes
 - Kommentar-Funktion, mit der Möglichkeit Hashtags zu verwenden
 
 #### Posts
 
-![Instagram - Post eines Fotos](img/insta_post.png) 
+![Instagram - Post eines Fotos](img/insta_post.png)
 
 #### Tags (und Following)
 
-![Instagram - Following und Hashtags](img/insta_following.png) 
+![Instagram - Following und Hashtags](img/insta_following.png)
 
 ### Relevante Objekte
 
@@ -189,143 +192,143 @@ Das sind die Benutzeraccounts zur Identifizierung eines Benutzers.
 - Passwort ist nicht leer (min. 8 Zeichen)
 - beim erstellen des Benutzers wird ein Timestamp erstellt
 
-| **id**                  | Eindeutige ID zur internen Identifizierung der User    |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Ganze Zahlen    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | System / Auto_Incement   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Nein   |
-| Primärschlüssel         | Ja   |
-| Sonst                   | automatisch vom System verwaltet über Constraint   |
-| Beispielwerte           | 1, 2, 3, ...   |
+| **id**              | Eindeutige ID zur internen Identifizierung der User |
+| ------------------- | --------------------------------------------------- |
+| Wertebereich        | Ganze Zahlen                                        |
+| Werte-Einschränkung | Nein                                                |
+| Wertevergabe        | System / Auto_Incement                              |
+| Default-Wert        | Nein                                                |
+| NULL-Wert-erlaubt   | Nein                                                |
+| Duplikate erlaubt   | Nein                                                |
+| Primärschlüssel     | Ja                                                  |
+| Sonst               | automatisch vom System verwaltet über Constraint    |
+| Beispielwerte       | 1, 2, 3, ...                                        |
 
-| **username**            | Eindeutiger vom Benutzer gewählter Identifier          |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Text    |
-| Werte-Einschränkung     | min. 4 Zeichen   |
-| Wertevergabe            | Benutzereingabe   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Nein   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | 'Roland', '11KidShredder', 'user.dummy'   |
+| **username**        | Eindeutiger vom Benutzer gewählter Identifier |
+| ------------------- | --------------------------------------------- |
+| Wertebereich        | Text                                          |
+| Werte-Einschränkung | min. 4 Zeichen                                |
+| Wertevergabe        | Benutzereingabe                               |
+| Default-Wert        | Nein                                          |
+| NULL-Wert-erlaubt   | Nein                                          |
+| Duplikate erlaubt   | Nein                                          |
+| Primärschlüssel     | Nein                                          |
+| Sonst               | -                                             |
+| Beispielwerte       | 'Roland', '11KidShredder', 'user.dummy'       |
 
-| **passwd**              | vom Benutzer gewähltes Passwort gehashed in SHA2       |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Text    |
-| Werte-Einschränkung     | min. 8 Zeichen   |
-| Wertevergabe            | Benutzereingabe   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Ja   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | '12345678', '12fdfs2e123', 'sdf-.?. .ddds'   |
+| **passwd**          | vom Benutzer gewähltes Passwort gehashed in SHA2 |
+| ------------------- | ------------------------------------------------ |
+| Wertebereich        | Text                                             |
+| Werte-Einschränkung | min. 8 Zeichen                                   |
+| Wertevergabe        | Benutzereingabe                                  |
+| Default-Wert        | Nein                                             |
+| NULL-Wert-erlaubt   | Nein                                             |
+| Duplikate erlaubt   | Ja                                               |
+| Primärschlüssel     | Nein                                             |
+| Sonst               | -                                                |
+| Beispielwerte       | '12345678', '12fdfs2e123', 'sdf-.?. .ddds'       |
 
-| **created_at**          | vom System automatisch erstellter Timestamp            |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Datum & Zeit    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | System, bei Erstellung des Accounts   |
-| Default-Wert            | Ja, sysdate   |
-| NULL-Wert-erlaubt       | Ja   |
-| Duplikate erlaubt       | Ja   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | '11.11.2021 23:59:59' ...   |
+| **created_at**      | vom System automatisch erstellter Timestamp |
+| ------------------- | ------------------------------------------- |
+| Wertebereich        | Datum & Zeit                                |
+| Werte-Einschränkung | Nein                                        |
+| Wertevergabe        | System, bei Erstellung des Accounts         |
+| Default-Wert        | Ja, sysdate                                 |
+| NULL-Wert-erlaubt   | Ja                                          |
+| Duplikate erlaubt   | Ja                                          |
+| Primärschlüssel     | Nein                                        |
+| Sonst               | -                                           |
+| Beispielwerte       | '11.11.2021 23:59:59' ...                   |
 
 #### Photos
 
 Dies sind die Photos die von Usern gepostet werden
 
-- Das Bild wird vorerst als url gespeichert
+- Das Foto wird vorerst als url gespeichert
 - beim erstellen des Fotos wird ein Timestamp erstellt
 
-| **id**                  | Eindeutige ID zur internen Identifizierung der Bilder    |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Ganze Zahlen    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | System / Auto_Incement   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Nein   |
-| Primärschlüssel         | Ja   |
-| Sonst                   | automatisch vom System verwaltet über Constraint   |
-| Beispielwerte           | 1, 2, 3, ...   |
+| **id**              | Eindeutige ID zur internen Identifizierung der Bilder |
+| ------------------- | ----------------------------------------------------- |
+| Wertebereich        | Ganze Zahlen                                          |
+| Werte-Einschränkung | Nein                                                  |
+| Wertevergabe        | System / Auto_Incement                                |
+| Default-Wert        | Nein                                                  |
+| NULL-Wert-erlaubt   | Nein                                                  |
+| Duplikate erlaubt   | Nein                                                  |
+| Primärschlüssel     | Ja                                                    |
+| Sonst               | automatisch vom System verwaltet über Constraint      |
+| Beispielwerte       | 1, 2, 3, ...                                          |
 
-| **image_url**           | Verlinkt zum geposteten Bild eines Benutzers  |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Text    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | Benutzereingabe   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Ja   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | 'img/katze.jpg' ... |
+| **image_url**       | Verlinkt zum geposteten Bild eines Benutzers |
+| ------------------- | -------------------------------------------- |
+| Wertebereich        | Text                                         |
+| Werte-Einschränkung | Nein                                         |
+| Wertevergabe        | Benutzereingabe                              |
+| Default-Wert        | Nein                                         |
+| NULL-Wert-erlaubt   | Nein                                         |
+| Duplikate erlaubt   | Ja                                           |
+| Primärschlüssel     | Nein                                         |
+| Sonst               | -                                            |
+| Beispielwerte       | 'img/katze.jpg' ...                          |
 
-| **created_at**          | vom System automatisch erstellter Timestamp            |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Datum & Zeit    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | System, bei Erstellung des Accounts   |
-| Default-Wert            | Ja, sysdate   |
-| NULL-Wert-erlaubt       | Ja   |
-| Duplikate erlaubt       | Ja   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | '11.11.2021 23:59:59' ...   |
+| **created_at**      | vom System automatisch erstellter Timestamp |
+| ------------------- | ------------------------------------------- |
+| Wertebereich        | Datum & Zeit                                |
+| Werte-Einschränkung | Nein                                        |
+| Wertevergabe        | System, bei Erstellung des Accounts         |
+| Default-Wert        | Ja, sysdate                                 |
+| NULL-Wert-erlaubt   | Ja                                          |
+| Duplikate erlaubt   | Ja                                          |
+| Primärschlüssel     | Nein                                        |
+| Sonst               | -                                           |
+| Beispielwerte       | '11.11.2021 23:59:59' ...                   |
 
 #### Tags
 
 Jedes Bild kann verschieden Tags zugeordnet werden.
 
 - Tags sind Einzigartig
-- beim erstellen des Fotos wird ein Timestamp erstellt
+- beim erstellen des Tags wird ein Timestamp erstellt
 
-| **id**                  | Eindeutige ID zur internen Identifizierung der Bilder    |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Ganze Zahlen    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | System / Auto_Incement   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Nein   |
-| Primärschlüssel         | Ja   |
-| Sonst                   | automatisch vom System verwaltet über Constraint   |
-| Beispielwerte           | 1, 2, 3, ...   |
+| **id**              | Eindeutige ID zur internen Identifizierung der Bilder |
+| ------------------- | ----------------------------------------------------- |
+| Wertebereich        | Ganze Zahlen                                          |
+| Werte-Einschränkung | Nein                                                  |
+| Wertevergabe        | System / Auto_Incement                                |
+| Default-Wert        | Nein                                                  |
+| NULL-Wert-erlaubt   | Nein                                                  |
+| Duplikate erlaubt   | Nein                                                  |
+| Primärschlüssel     | Ja                                                    |
+| Sonst               | automatisch vom System verwaltet über Constraint      |
+| Beispielwerte       | 1, 2, 3, ...                                          |
 
-| **tag_name**            | Bezeichner für die verschiedenen Tags der Bilder  |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Text    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | Benutzereingabe   |
-| Default-Wert            | Nein   |
-| NULL-Wert-erlaubt       | Nein   |
-| Duplikate erlaubt       | Nein   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | 'cat', 'drachenlordImKnast', 'WM2020' ... |
+| **tag_name**        | Bezeichner für die verschiedenen Tags der Bilder |
+| ------------------- | ------------------------------------------------ |
+| Wertebereich        | Text                                             |
+| Werte-Einschränkung | Nein                                             |
+| Wertevergabe        | Benutzereingabe                                  |
+| Default-Wert        | Nein                                             |
+| NULL-Wert-erlaubt   | Nein                                             |
+| Duplikate erlaubt   | Nein                                             |
+| Primärschlüssel     | Nein                                             |
+| Sonst               | -                                                |
+| Beispielwerte       | 'cat', 'drachenlordImKnast', 'WM2020' ...        |
 
-| **created_at**          | vom System automatisch erstellter Timestamp            |
-|------------------------ | ------------------------------------------------------ |
-| Wertebereich            | Datum & Zeit    |
-| Werte-Einschränkung     | Nein   |
-| Wertevergabe            | System, bei Erstellung des Accounts   |
-| Default-Wert            | Ja, sysdate   |
-| NULL-Wert-erlaubt       | Ja   |
-| Duplikate erlaubt       | Ja   |
-| Primärschlüssel         | Nein   |
-| Sonst                   | -   |
-| Beispielwerte           | '11.11.2021 23:59:59' ...   |
+| **created_at**      | vom System automatisch erstellter Timestamp |
+| ------------------- | ------------------------------------------- |
+| Wertebereich        | Datum & Zeit                                |
+| Werte-Einschränkung | Nein                                        |
+| Wertevergabe        | System, bei Erstellung des Accounts         |
+| Default-Wert        | Ja, sysdate                                 |
+| NULL-Wert-erlaubt   | Ja                                          |
+| Duplikate erlaubt   | Ja                                          |
+| Primärschlüssel     | Nein                                        |
+| Sonst               | -                                           |
+| Beispielwerte       | '11.11.2021 23:59:59' ...                   |
 
 ### Beziehungen
 
-Aus der Analyse von Instagram ergeben sich die nachfolgend beschrien Beziehungen 
+Aus der Analyse von Instagram ergeben sich die nachfolgend beschrien Beziehungen
 für unser Projekt SEISMIK.
 
 #### posten
@@ -335,13 +338,13 @@ Ist eine Binäre Beziehung zwischen Users und Photos.
 - Jeder User kann ein oder mehrere Fotos posten
 - Jedes Foto wird von genau einem User gepostet
 
-|         | **Beteiligung**                 | **Kardinalität**    |
-|-------  | ---------------                 | ---------------     |
-| Users   | `0`                               | `N`                   |
-|         | Jeder User muss kein Foto posten  | Jeder User kann mehrere Fotos posten    |
-| Photos  | `1`                               | `1`       |
-|         | Jedes Foto muss von einem User | Jedes Foto wird von höchstens|
-|         | gepostet werden                 | einem User gepostet |
+|        | **Beteiligung**                  | **Kardinalität**                     |
+| ------ | -------------------------------- | ------------------------------------ |
+| Users  | 0                                | N                                    |
+|        | Jeder User muss kein Foto posten | Jeder User kann mehrere Fotos posten |
+| Photos | 1                                | 1                                    |
+|        | Jedes Foto muss von einem User   | Jedes Foto wird von höchstens        |
+|        | gepostet werden                  | einem User gepostet                  |
 
 #### liken
 
@@ -350,13 +353,13 @@ Ist eine Binäre Beziehung zwischen Users und Photos.
 - Jeder User kann ein oder mehrere Fotos liken
 - Jedes Photo kann von mehreren Usern geliked werden
 
-|         | **Beteiligung**                 | **Kardinalität**    |
-|-------  | ---------------                 | ---------------     |
-| Users   | 0                               | N                   |
-|         | Jeder User muss kein Foto liken  | Jeder User kann mehrere Fotos liken    |
-| Photos  | 0                               | M       |
-|         | Jedes Foto muss nicht von einem | Jedes Foto kann von mehreren|
-|         | User geliked werden                 | User geliked werden |
+|        | **Beteiligung**                 | **Kardinalität**                    |
+| ------ | ------------------------------- | ----------------------------------- |
+| Users  | 0                               | N                                   |
+|        | Jeder User muss kein Foto liken | Jeder User kann mehrere Fotos liken |
+| Photos | 0                               | M                                   |
+|        | Jedes Foto muss nicht von einem | Jedes Foto kann von mehreren        |
+|        | User geliked werden             | User geliked werden                 |
 
 #### comments
 
@@ -365,50 +368,51 @@ Ist eine Binäre Beziehung zwischen Users und Photos.
 - Jeder User kann ein oder mehrere Fotos kommentieren
 - Jedes Photo kann von mehreren Usern kommentiert werden
 
-|         | **Beteiligung**                 | **Kardinalität**    |
-|-------  | ---------------                 | ---------------     |
-| Users   | 0                               | N                   |
-|         | Jeder User muss kein Foto kommentieren  | Jeder User kann mehrere Fotos kommentieren    |
-| Photos  | 0                               | M       |
-|         | Jedes Foto muss nicht von einem | Jedes Foto kann von mehreren|
-|         | User kommentiert werden                 | User kommentiert werden |
+|        | **Beteiligung**                        | **Kardinalität**                           |
+| ------ | -------------------------------------- | ------------------------------------------ |
+| Users  | 0                                      | N                                          |
+|        | Jeder User muss kein Foto kommentieren | Jeder User kann mehrere Fotos kommentieren |
+| Photos | 0                                      | M                                          |
+|        | Jedes Foto muss nicht von einem        | Jedes Foto kann von mehreren               |
+|        | User kommentiert werden                | User kommentiert werden                    |
 
 #### having
 
 Ist eine Binäre Beziehung zwischen Tags und Photos.
 
 - Jeder Tag muss einem oder mehreren Fotos zugeordnet sein
-- Jedes Photo kann mit mehreren Tags gekennzeichnet werden 
+- Jedes Photo kann mit mehreren Tags gekennzeichnet werden
 
-|         | **Beteiligung**                 | **Kardinalität**    |
-|-------  | ---------------                 | ---------------     |
-| Tags   | 1                               | N                   |
-|         | Jeder Tag muss einem Foto zugeordnet sein  | Jeder Tag kann mehreren Fotos zugeordnet sein    |
-| Photos  | 0                               | M       |
-|         | Jedes Foto muss nicht mit einem | Jedes Foto kann mit mehreren|
-|         | Tag gekennzeichnet werden                 | Tags gekennzeichnet werden |
+|        | **Beteiligung**                           | **Kardinalität**                              |
+| ------ | ----------------------------------------- | --------------------------------------------- |
+| Tags   | 1                                         | N                                             |
+|        | Jeder Tag muss einem Foto zugeordnet sein | Jeder Tag kann mehreren Fotos zugeordnet sein |
+| Photos | 0                                         | M                                             |
+|        | Jedes Foto muss nicht mit einem           | Jedes Foto kann mit mehreren                  |
+|        | Tag gekennzeichnet werden                 | Tags gekennzeichnet werden                    |
 
 #### follows
 
-Ist eine Unäre Beziehung von Users 
+Ist eine Unäre Beziehung von Users
 
 - Jeder Follower kann mehreren Followees folgen
 - Jeder Followee kann mehrere Follower besitzen
 
-|         | **Beteiligung**                 | **Kardinalität**    |
-|-------  | ---------------                 | ---------------     |
-| Users   | 0                               | N                   |
-|         | Jeder follower muss keinem followee folgen  | Jeder follower kann mehreren followees folgen    |
-| Users  | 0                               | M       |
-|         | Jeder followee muss keinen follower | Jeder followee kann von mehreren|
-|         | besitzen                 | followern gefolgt werden |
+|       | **Beteiligung**                            | **Kardinalität**                              |
+| ----- | ------------------------------------------ | --------------------------------------------- |
+| Users | 0                                          | N                                             |
+|       | Jeder follower muss keinem followee folgen | Jeder follower kann mehreren followees folgen |
+| Users | 0                                          | M                                             |
+|       | Jeder followee muss keinen follower        | Jeder followee kann von mehreren              |
+|       | besitzen                                   | followern gefolgt werden                      |
 
 ### Typische Operationen
 
-- Ausgabe aller Posts eines Benutzers
-- Ausgabe aller Follower eines Benutzers
+- Benutzer login
+- Anzeige Kommentare eines Bildes
 - Ausgabe aller Followees des Benutzers
-- Ausgabe aller likes eine Benutzers und deren user_name
+- Ausgabe der Followers des Benutzers
+- Ausgabe aller likes eines Bildes
 
 ### weitere relevante Informationen
 
@@ -417,8 +421,8 @@ und Auswahl des Datenbanksystems zu beachten sind.
 
 #### Datenmengen
 
-Über das Datenvolumen der Datenbank lässt sich an dieser Stelle noch keine ganz 
-genaue Aussage treffen. Unter anderem fehlen Informationen, in welchem Format und Auflösung die 
+Über das Datenvolumen der Datenbank lässt sich an dieser Stelle noch keine ganz
+genaue Aussage treffen. Unter anderem fehlen Informationen, in welchem Format und Auflösung die
 Bilder später gespeichert werden und ob auch noch Videos und andere Metadaten hinzu kommen werden.
 
 Es ist allerdings davon auszugehen das das die Datenbank schnell mehrere TB groß
@@ -438,9 +442,9 @@ Zudem sind strafrechtliche Bestimmungen der einzelnen Länder zu beachten.
 #### Sicherung der Datenbank
 
 Wir können uns keine Downtimes der Datenbank erlauben, da wir uns auf einem globalen
-Markt bewegen. 
+Markt bewegen.
 Die Datenbank wird als micro-service in einem orchestrierten Container-cluster
-laufen. Sie wird durch Replizierung gegen einen Ausfall gesichert und jeweils asynchron auf externe 
+laufen. Sie wird durch Replizierung gegen einen Ausfall gesichert und jeweils asynchron auf externe
 Sicherungshubs verteilt.
 
 #### Zeichensatz
@@ -459,19 +463,19 @@ Jede Entität wird nachfolgend detailliert mit den dazugehörigen Attributen dar
 
 #### USERS
 
-![SEISMIK - Entität USERS](img/ERModell_USERS.pdf) 
+![SEISMIK - Entität USERS](img/ERModell_USERS.pdf)
 
 #### PHOTOS
 
-![SEISMIK - Entität PHOTOS](img/ERModell_PHOTOS.pdf) 
+![SEISMIK - Entität PHOTOS](img/ERModell_PHOTOS.pdf)
 
 #### TAGS
 
-![SEISMIK - Entität TAGS](img/ERModell_TAGS.pdf) 
+![SEISMIK - Entität TAGS](img/ERModell_TAGS.pdf)
 
 ## Relationenmodell
 
-![](img/Relationship.pdf) 
+![SEISMIK - Relationenmodell](img/Relationship.pdf)
 
 ## Normalisierung
 
@@ -498,23 +502,145 @@ Zum Erstellen der Datenbankobjekte wird ein Benutzer benötigt, der über ausrei
 - Erstellung aller vorher aufgelisteten Tabellen von SEISMIK
 - löschen bereits vorhandener Tabellen
 
-Script: ...
+Script: setup/db_table_install.sql
 
-### Test-Datensätze
+### Dummy-Datensätze
 
-Zum Testen der Datenbank werden einige typische Datensätze in die entsprechenden Tabellen
-eingefügt.
+- leeren bereits vorhandener Tabellen
+- einfügen der Dummy-Datensätze in jede Tabelle
+- speichern (COMMIT) der Transaktion
 
-Skript:
-
-Aufgabe des Skriptes:
-Um immer von denselben Testdatensätzen auszugehen, werden aus den Tabellen zunächst die
-eventuell vorhandenen Datensätze gelöscht und anschließend eingefügt.
+Skript: setup/insert_data.sql
 
 ## Datenmanipulation
 
 Die Manipulation der Daten erfolgt durch interaktive Eingabe der Werte.
 
+### Foto posten
+
+Es wird ein neues Foto (derzeit noch link) des angemeldeten Benutzers(Login) in der Tabelle `photos`
+gespeichert. Der Benutzer wird zum Datenupload (derzeit noch url) des Fotos aufgefordert.
+Der Primärschlüssel wird vom DBMS selbst verwaltet. Am Ende werden die Änderungen gespeichert (Commited)
+
+Skript: update/post.sql
+
+### Foto löschen
+
+Es wird ein ausgewähltes Foto (derzeit noch link) des angemeldeten Benutzers(Login) aus der Tabelle `photos` gelöscht.
+Der Benutzer wählt die ID des Fotos das er löschen möchte aus.
+Dann wird dass Foto in der Tabelle `photos` gelöscht. Anschließend werden in allen
+Beziehungen (`likes`, `comments`, `photo_tags`) die jeweiligen zugehörigen Datensätze gelöscht.
+Am Ende werden die Änderungen gespeichert (Commited).
+
+Skript: update/post.sql
+
+### Liken
+
+Es werden dem Benutzer alle Fotos die er noch nicht geliked hat angezeigt.
+Der eingeloggte Benutzer wählt eine Foto ID aus (`photos`).
+Dann wird in der Tabelle `likes` die ID des eingeloggten Benutzers sowie die ID
+des gewählten Fotos eingetragen. Am Ende werden die Änderungen gespeichert (Commited).
+Die beiden gesetzten ID sind jeweils Fremdschlüssel mit Referenz zu `users` und `photos`.
+
+Skript: update/like.sql
+
+### Unliken
+
+Dem Benutzer werden alle Fotos angezeigt die er geliked hat. Er wird aufgefordert
+eine ID eines Fotos das er unliken will zu wählen.
+Es werden dann in der Tabelle `likes` die beiden Fremdschlüssel `user_id` und `photo_id`
+gelöscht. Diese Transaktion wird anschließend beendet (Commited). Beide Werte sind
+jeweils Fremdschlüssel mit Referenz auf `users` und `photos`.
+
+Script: update/unlike.sql
+
+### Folgen
+
+Am Anfang erhält der Benutzer eine Übersicht der Nutzer denen er Folgen kann (der Benutzer
+und bereits gefolgte Benutzer werden nicht angezeigt). Er wählt dann die `id` des
+Benutzers dem er folgen will. Es werden dann in der Tabelle `follows` jeweils die
+ID des Benutzers `follower_id` sowie die ID des ausgewählten Benutzers `followee_id` eingetragen.
+Die Transaktion wird anschließend beendet (Commited). Jede ID ist jeweils ein Fremdschlüssel.
+
+Script: update/follow.sql
+
+### Unfollow
+
+Der Benutzer wählt aus einer Liste der bereits gefolgten Benutzern die `followee_id` aus.
+Anschließend wird in der Tabelle `follows` der Datensatz mit der ausgewählten `followee_id` und
+der ID des Benutzers `follower_id` gelöscht.
+Am Ende werden die Änderungen gespeichert (Commited).
+Die beiden gesetzten ID sind jeweils Fremdschlüssel mit einer Referenz zu `users`.
+
+Script: update/unfollow.sql
+
 ## Datenabfrage
 
+Eine Auflistung der derzeitigen Datenabfragen sollen nachfolgend vorgestellt werden.
+
+### Bilder des Users anzeigen
+
+Welche Bilder hat der User bereits gepostet mit Gesamtzahl der Likes und Comments je Bild.
+
+Script: read/userphotos.sql
+
+### Kommentare eines Bildes
+
+Der User erhält eine Auswahl aller Bilder mit Kommentaren > 0.
+Er wählt dann eines via ID aus.
+Es wird dem User dann eine Tabelle mit allen Kommentaren zu diesem Bild präsentiert,
+absteigend sortiert nach gepostetem Datum und wer diesen post erstellt hat.
+
+Script: read/neusteK.sql
+
+### Top 5 liked Fotos
+
+Eine Übersicht der Top 5 gelikten Fotos (Fotos mit den 5 höchsten like werten[doppelte Platzierungen nicht ausgeschlossen]).
+
+Script: read/top5.sql
+
 ## Menügestaltung
+
+Die Verwaltung der Datenbankobjekte, die Datenmanipulation und die Datenabfrage kann
+menügesteuert ausgeführt werden. Die Menügestaltung wird mit den Möglichkeiten, die `sqlcl`
+bietet, realisiert.
+
+### Ordner- und Datei-Struktur
+
+Die Menügestaltung basiert auf der nachfolgend dargestellten Struktur.
+
+![Ordner-/Dateistruktur](img/tree_scripts.png)
+
+### Menüübersicht
+
+![Menügestaltung](img/menugestaltung.pdf)
+
+Zum Starten wird das shellscript: `start.sh` ausgeführt. Es sorgt dafür, dass das Programm `SQLcl`
+ohne eine Anmeldung an die Datenbank gestartet wird. Nach erfolgreichem Start der Anwendung wird
+das Skript: `start.sql` ausgeführt.
+
+Im Skript: `start.sql` werden die folgenden Substitutionsvariablen generiert:
+
+- `usr` => Name des Datenbankbenutzers (Default: hr)
+- `passwd` => Passwort des Datenbankbenutzers (Default: hr)
+- `db` => Datenbankname der Datenbank (Default: XEPDB1)
+
+Statt dem vorgeschlagenen Default-Wert kann der Benutzer interaktiv einen neuen Wert vergeben.
+Der Benutzer wird danach mit der Datenbank verbunden und anschließend das Hauptmenü durch
+Aufrufen des Skriptes: `menu.sql` präsentiert.
+
+#### Hauptmenü
+
+![Hauptmenü](img/zsh_hauptmenu.png)
+
+Im Hauptmenü kann zwischen folgenden Menüpunkten gewählt werden, deren Auswahl in den
+jeweiligen eckigen Klammerpaar angegeben wird:
+
+| Menüpunkt                     | Bemerkung                                 | Skript            |
+| ----------------------------- | ----------------------------------------- | ----------------- |
+| Datenbankstruktur bearbeiten  | Ruft das Untermenu: Datenbankstruktur auf | `setup/menu.sql`  |
+| Benutzerauswahl / -wechsel    | Ruft das Script Login auf                 | `user.sql`        |
+| Lesen spezifischer Datensätze | Ruft das Untermenu: Daten lesen auf       | `read/menu.sql`   |
+| ändern von Datensätzen        | Ruft das Untermenu: Daten ändern auf      | `update/menu.sql` |
+
+#### Untermenu
