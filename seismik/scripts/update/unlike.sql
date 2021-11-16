@@ -15,29 +15,34 @@ PROMPT " ╚══════╝╚══════╝╚═╝╚═══�
 PROMPT "                                                  "
 PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
 PROMPT " ·················································"
-PROMPT " Alle Fotos die Kommentare besitzen => "
-SELECT 
-  p.id AS "Foto ID",
-  p.image_url AS Foto,
-  count(c.comment_text) AS Kommentare
-FROM 
-  comments c
-JOIN
-  photos p
-ON p.id = c.photo_id
-GROUP BY p.id, p.image_url
-ORDER BY 1
-;
+PROMPT "  Foto unliken =>"
 
+-- anzeige gelikter bilder
+SELECT
+  DISTINCT
+  i.id AS ID,
+  i.image_url AS Foto,
+  to_char(l.created_at,'DD.MM.YYYY | HH24:MI:SS') AS "geliked am"
+FROM photos i
+RIGHT JOIN likes l
+ON l.photo_id = i.id
+WHERE l.user_id = &&v_user
+ORDER BY i.id; 
+
+-- eine auswahl anfordern
 PROMPT " "
-ACCEPT input PROMPT " Wählen Sie eine Foto ID => "
 PROMPT " "
+ACCEPT input PROMPT " ID zum Un-liken eingeben => "   
 
-COLUMN img NEW_VALUE v_img
+SET ECHO ON
+-- inserting data
+INSERT INTO likes (user_id, photo_id)
+VALUES (&&v_user, &input);
+-- saving transaction
+COMMIT;
 
-SELECT image_url AS img FROM photos WHERE id = &input;
-cl scr
-
+SET ECHO OFF
+-- neuer bildschirm 
 PROMPT " 﫥d.schwarz                               Axklen"
 PROMPT " ·················································" 
 PROMPT "                                                  " 
@@ -50,29 +55,29 @@ PROMPT " ╚══════╝╚══════╝╚═╝╚═══�
 PROMPT "                                                  "
 PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
 PROMPT " ·················································"
-PROMPT " Kommentare für Foto => &&v_img"
+PROMPT "  meine Likes =>"
 
--- show photos of user with like count and comment count
-SELECT 
-  c.comment_text AS Kommentar,
-  to_char(c.created_at, 'DD.MM.YYYY | HH24:MI:SS') AS gepostet,
-  u.username AS "post von"
-FROM comments c
-LEFT JOIN photos p
-ON c.photo_id = p.id
-LEFT JOIN users u
-ON c.user_id = u.id
-WHERE p.id = &input
-ORDER BY c.created_at DESC
-;
+-- anzeige gelikter bilder
+SELECT
+  DISTINCT
+  i.id AS ID,
+  i.image_url AS Foto,
+  to_char(l.created_at,'DD.MM.YYYY | HH24:MI:SS') AS "geliked am"
+FROM photos i
+RIGHT JOIN likes l
+ON l.photo_id = i.id
+WHERE l.user_id = &&v_user
+ORDER BY i.id; 
 
+-- zeige Benutzer ohne den eigenen benutzer und bereits gefolgte user
 PROMPT " "
 PROMPT " "
 PROMPT " "
 PROMPT " wie soll es weitergehen?"
 PROMPT " ·················································"
 PROMPT " "
-PROMPT " [ 1 ]   anderes Foto wählen"
+PROMPT " [ 1 ]   weiteres Foto unliken"
+PROMPT " [ 2 ]   Foto liken"
 PROMPT " -------------------------------------------------"
 PROMPT " [ z ]  » ZURÜCK"
 PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
@@ -88,7 +93,8 @@ COLUMN virt_col new_value v_choice
 
 SELECT
    CASE '&input2'
-   WHEN '1' THEN 'neusteK.sql'
+   WHEN '1' THEN 'unlike.sql'
+   WHEN '2' THEN 'like.sql'
    WHEN 'z' THEN 'menu.sql'
    WHEN 'h' THEN '../menu.sql'
    WHEN 'q' THEN '../quit.sql'
@@ -98,5 +104,4 @@ FROM dual;
 
 SET TERM ON
 
-
-@&v_choice
+@&v_choice 

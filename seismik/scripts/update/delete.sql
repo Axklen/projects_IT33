@@ -15,29 +15,57 @@ PROMPT " ╚══════╝╚══════╝╚═╝╚═══�
 PROMPT "                                                  "
 PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
 PROMPT " ·················································"
-PROMPT " Alle Fotos die Kommentare besitzen => "
-SELECT 
-  p.id AS "Foto ID",
-  p.image_url AS Foto,
-  count(c.comment_text) AS Kommentare
-FROM 
-  comments c
-JOIN
-  photos p
+PROMPT "  Bild löschen =>"
+
+SELECT
+  DISTINCT
+  p.id AS ID,
+  p.image_url AS Bild,
+  to_char(p.created_at, 'DD.MM.YYYY') AS gepostet,
+  count(l.photo_id) AS likes,
+  count(c.comment_text) AS comments
+FROM photos p
+LEFT JOIN users u
+ON p.user_id = u.id
+LEFT JOIN comments c
 ON p.id = c.photo_id
-GROUP BY p.id, p.image_url
-ORDER BY 1
-;
+LEFT JOIN likes l
+ON p.id = l.photo_id
+WHERE u.id = &&v_user
+GROUP BY p.id, p.image_url, c.comment_text, p.created_at;
 
 PROMPT " "
-ACCEPT input PROMPT " Wählen Sie eine Foto ID => "
-PROMPT " "
+ACCEPT imgid PROMPT " Bitte eine ID eingeben => "   
 
-COLUMN img NEW_VALUE v_img
+DELETE FROM photos
+WHERE id = &imgid;
 
-SELECT image_url AS img FROM photos WHERE id = &input;
+DELETE FROM likes
+WHERE photo_id = &imgid;
+
+DELETE FROM comments
+WHERE photo_id = &imgid;
+
+DELETE FROM photo_tags
+WHERE photo_id = &imgid;
+
+COMMIT;
+
+SET TERM OFF
+
+-- grab imagecount
+COLUMN imgc NEW_VALUE v_img_anz
+
+SELECT
+  count(image_url) AS imgc
+FROM users u
+RIGHT JOIN photos p
+ON p.user_id = u.id
+WHERE p.user_id = &&v_user;
+
+SET TERM ON
+
 cl scr
-
 PROMPT " 﫥d.schwarz                               Axklen"
 PROMPT " ·················································" 
 PROMPT "                                                  " 
@@ -50,36 +78,38 @@ PROMPT " ╚══════╝╚══════╝╚═╝╚═══�
 PROMPT "                                                  "
 PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
 PROMPT " ·················································"
-PROMPT " Kommentare für Foto => &&v_img"
+PROMPT "  meine Bilder =>"
 
--- show photos of user with like count and comment count
-SELECT 
-  c.comment_text AS Kommentar,
-  to_char(c.created_at, 'DD.MM.YYYY | HH24:MI:SS') AS gepostet,
-  u.username AS "post von"
-FROM comments c
-LEFT JOIN photos p
-ON c.photo_id = p.id
+SELECT
+  DISTINCT p.image_url AS Bild,
+  to_char(p.created_at, 'DD.MM.YYYY') AS gepostet,
+  count(l.photo_id) AS likes,
+  count(c.comment_text) AS comments
+FROM photos p
 LEFT JOIN users u
-ON c.user_id = u.id
-WHERE p.id = &input
-ORDER BY c.created_at DESC
-;
+ON p.user_id = u.id
+LEFT JOIN comments c
+ON p.id = c.photo_id
+LEFT JOIN likes l
+ON p.id = l.photo_id
+WHERE u.id = &&v_user
+GROUP BY p.image_url, c.comment_text, p.created_at;
 
 PROMPT " "
 PROMPT " "
 PROMPT " "
 PROMPT " wie soll es weitergehen?"
-PROMPT " ·················································"
+PROMPT "··················································"
 PROMPT " "
-PROMPT " [ 1 ]   anderes Foto wählen"
+PROMPT " [ 1 ]   weiteres Foto löschen?"
+PROMPT " [ 2 ]  ﴩ Foto posten"
 PROMPT " -------------------------------------------------"
 PROMPT " [ z ]  » ZURÜCK"
 PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
 PROMPT " [ q ]   Anwendung BEENDEN"
 PROMPT " "
+PROMPT "··················································"
 ACCEPT input2 PROMPT " Ihre Auwahl => "
-PROMPT " ·················································"
 
 --weiterleitung nach auswahl
 SET TERM OFF
@@ -88,7 +118,8 @@ COLUMN virt_col new_value v_choice
 
 SELECT
    CASE '&input2'
-   WHEN '1' THEN 'neusteK.sql'
+   WHEN '1' THEN 'delete.sql'
+   WHEN '2' THEN 'post.sql'
    WHEN 'z' THEN 'menu.sql'
    WHEN 'h' THEN '../menu.sql'
    WHEN 'q' THEN '../quit.sql'
@@ -98,5 +129,4 @@ FROM dual;
 
 SET TERM ON
 
-
-@&v_choice
+@&v_choice 

@@ -51,7 +51,7 @@ COLUMN usrid NEW_VALUE v_user
 SELECT &input AS usrid FROM dual;
 
 -- grab followees
-COLUMN folc NEW_VALUE v_following
+COLUMN folc NEW_VALUE v_follower
 
 SELECT
   count(username) AS folc
@@ -61,7 +61,7 @@ ON f.follower_id = u.id
 WHERE f.followee_id = &&v_user;
 
 -- grab followers
-COLUMN fole NEW_VALUE v_follower
+COLUMN fole NEW_VALUE v_following
 
 SELECT
   count(username) AS fole
@@ -127,12 +127,13 @@ PROMPT " "
 PROMPT " wie soll es weitergehen?"
 PROMPT "··················································"
 PROMPT " "
-PROMPT " [ u ] => Benutzer wechseln"
-PROMPT " [ h ] =>  ZURÜCK zum Hauptmenü"
-PROMPT " [ q ] =>  Anwendung BEENDEN"
+PROMPT " [ u ]   Benutzer wechseln"
+PROMPT "--------------------------------------------------"
+PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
+PROMPT " [ q ]   Anwendung BEENDEN"
 PROMPT " "
-ACCEPT input2 PROMPT " Ihre Auwahl => "
 PROMPT "··················································"
+ACCEPT input2 PROMPT " Ihre Auwahl => "
 
 --weiterleitung nach auswahl
 SET TERM OFF

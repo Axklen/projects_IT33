@@ -15,7 +15,7 @@ PROMPT " ╚══════╝╚══════╝╚═╝╚═══�
 PROMPT "                                                  "
 PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
 PROMPT " ·················································"
-
+PROMPT " Top 5 liked Fotos =>"
 -- bilderausgabe
 -- zeige Benutzer
 SELECT 
@@ -34,9 +34,9 @@ PROMPT " "
 PROMPT " wie soll es weitergehen?"
 PROMPT " ·················································"
 PROMPT " "
-PROMPT " [ z ] => ZURÜCK"
-PROMPT " [ h ] =>  ZURÜCK zum Hauptmenü"
-PROMPT " [ q ] =>  Anwendung BEENDEN"
+PROMPT " [ z ]  » ZURÜCK"
+PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
+PROMPT " [ q ]   Anwendung BEENDEN"
 PROMPT " "
 PROMPT " ·················································"
 ACCEPT input2 PROMPT " Ihre Auwahl => "

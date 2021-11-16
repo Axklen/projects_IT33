@@ -15,7 +15,7 @@ PROMPT " ╚══════╝╚══════╝╚═╝╚═══�
 PROMPT "                                                  "
 PROMPT "  &&v_usern   &&v_img_anz   &&v_following   &&v_follower   &&v_comments  "
 PROMPT " ·················································"
-PROMPT " Benutzer folgen =>"
+PROMPT "  Benutzer folgen =>"
 
 -- zeige Benutzer ohne den eigenen benutzer und bereits gefolgte user
 SELECT 
@@ -40,6 +40,17 @@ INSERT INTO follows(follower_id, followee_id) VALUES (&&v_user,&input);
 
 COMMIT;
 
+-- update statusline following
+COLUMN fole NEW_VALUE v_following
+
+SELECT
+  count(username) AS fole
+FROM users u
+RIGHT JOIN follows f
+ON f.followee_id = u.id
+WHERE f.follower_id = &&v_user;
+
+cl scr
 PROMPT " 﫥d.schwarz                               Axklen"
 PROMPT " ·················································" 
 PROMPT "                                                  " 
@@ -72,15 +83,15 @@ PROMPT " "
 PROMPT " wie soll es weitergehen?"
 PROMPT " ·················································"
 PROMPT " "
--- NOTE: einem benutzer unfollen
-PROMPT " [ 1 ] => einem weiteren Benutzer folgen?"
+PROMPT " [ 1 ]   einem weiteren Benutzer folgen?"
+PROMPT " [ 2 ]   einem Benutzer nicht mehr folgen?"
 PROMPT " -------------------------------------------------"
-PROMPT " [ z ] => ZURÜCK"
-PROMPT " [ h ] =>  ZURÜCK zum Hauptmenü"
-PROMPT " [ q ] =>  Anwendung BEENDEN"
+PROMPT " [ z ]  » ZURÜCK"
+PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
+PROMPT " [ q ]   Anwendung BEENDEN"
 PROMPT " "
-ACCEPT input2 PROMPT " Ihre Auwahl => "
 PROMPT " ·················································"
+ACCEPT input2 PROMPT " Ihre Auwahl => "
 
 --weiterleitung nach auswahl
 SET TERM OFF
@@ -89,7 +100,8 @@ COLUMN virt_col new_value v_choice
 
 SELECT
    CASE '&input2'
-   WHEN '1' THEN 'like.sql'
+   WHEN '1' THEN 'follow.sql'
+   WHEN '2' THEN 'unfollow.sql'
    WHEN 'z' THEN 'menu.sql'
    WHEN 'h' THEN '../menu.sql'
    WHEN 'q' THEN '../quit.sql'
