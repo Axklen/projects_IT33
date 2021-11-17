@@ -32,16 +32,16 @@ ORDER BY i.id;
 -- eine auswahl anfordern
 PROMPT " "
 PROMPT " "
-ACCEPT input PROMPT " ID zum Un-liken eingeben => "   
+ACCEPT unlike PROMPT " ID zum Un-liken eingeben => "   
 
-SET ECHO ON
--- inserting data
-INSERT INTO likes (user_id, photo_id)
-VALUES (&&v_user, &input);
+-- deleteing data
+DELETE FROM likes
+WHERE user_id = &&v_user
+  AND photo_id = &unlike;
 -- saving transaction
 COMMIT;
 
-SET ECHO OFF
+cl scr
 -- neuer bildschirm 
 PROMPT " 﫥d.schwarz                               Axklen"
 PROMPT " ·················································" 

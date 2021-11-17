@@ -78,8 +78,8 @@ PROMPT " [ z ]  » ZURÜCK"
 PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
 PROMPT " [ q ]   Anwendung BEENDEN"
 PROMPT " "
-ACCEPT input2 PROMPT " Ihre Auwahl => "
 PROMPT " ·················································"
+ACCEPT input2 PROMPT " Ihre Auwahl => "
 
 --weiterleitung nach auswahl
 SET TERM OFF

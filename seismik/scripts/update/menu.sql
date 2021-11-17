@@ -26,6 +26,8 @@ PROMPT " -------------------------------------------------"
 PROMPT " [ h ]   ZURÜCK zum Hauptmenü"
 PROMPT " [ q ]   Anwendung BEENDEN"
 PROMPT " "
+PROMPT " ·················································"
+PROMPT " "
 ACCEPT input PROMPT " Ihre Auswahl => "
 PROMPT " "
 

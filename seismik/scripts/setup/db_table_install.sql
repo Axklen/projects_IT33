@@ -23,7 +23,7 @@ PROMPT "=========================================="
 -- create all tables, first w/o FKs
 CREATE TABLE users
 (
-  id NUMBER GENERATED ALWAYS as IDENTITY 
+  id NUMBER GENERATED ALWAYS AS IDENTITY 
             CONSTRAINT pk_users_id PRIMARY KEY,
   username VARCHAR(50) UNIQUE NOT NULL,
   passwd VARCHAR(255) NOT NULL,

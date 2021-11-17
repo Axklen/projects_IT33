@@ -44,6 +44,7 @@ VALUES (&&v_user, &input);
 COMMIT;
 
 -- neuer bildschirm 
+cl scr
 PROMPT " 﫥d.schwarz                               Axklen"
 PROMPT " ·················································" 
 PROMPT "                                                  " 
