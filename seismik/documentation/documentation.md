@@ -62,13 +62,20 @@ Die SQL-Scripte sollen:
 
 Ich habe hierbei mit Gnu/Linux - Fedora Silverblue[^e] - gearbeitet. Um den Oracle
 SQL Server aufzusetzen benutze ich [Podman](https://podman.io/) - ein Containertool, verwendet um
-den Server in einem Container aufzusetzen. Das Image ist von [gvenzl/oracle-xe](https://hub.docker.com/r/gvenzl/oracle-xe) 
+den Server in einem Container aufzusetzen. Das Image ist von [gvenzl/oracle-xe](https://hub.docker.com/r/gvenzl/oracle-xe)
+
+```{.bash caption="Podman container cmd"}
+podman run -d -p 1521:1521 --name oracle-18c -v
+<path/to/your/initScripts>:/container-entrypoint-initdb.d:Z
+-e ORACLE_PASSWORD="yourPWD" -v oracle-volume:/opt/oracle/oradata
+gvenzl/oracle-xe:18.4.0-full
+```
 
 Zur Dokumentation habe ich Markdown benutzt und dieses mit
-dem Tool [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) in eine PDF-Datei gerendert.
+dem template von [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) via [Pandoc](https://pandoc.org/) in eine PDF-Datei gerendert.
 
 ```{.bash caption="Eisvogel cl-Befehl"}
-pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
+pandoc documentation.md -o documentation.pdf --from markdown --template eisvogel -V lof -V lot -V lang=de --shift-heading-level-by=-1 --toc --number-sections --listings
 ```
 
 [^e]: Immutable OS
@@ -142,8 +149,6 @@ liegt hier vor allem auf Video- und Foto-Sharing.
 Mit mehr als 20 Mio. Nutzern allein in Deutschland und 150 Mio. Weltweit zählt
 Instagram zu einem der größeren Vertreter der Social-Media-Apps.
 
----
-
 Man kann es sich wie eine Art Online-Fotoalbum vorstellen, in dem man Einblicke
 in sein Leben geben kann. Es ist auf allen gängigen Plattformen erhältlich und
 wird auch gern von Unternehmen zur Reichweitensteigerung genutzt.
@@ -157,8 +162,6 @@ wird auch gern von Unternehmen zur Reichweitensteigerung genutzt.
 Benutzer laden Bilder hoch, die sie durch Tags (Hashtags) kategorisieren können.
 Diese Bilder können in Ihrer Größe verändert werden und man kann verschiedene
 Farbfilter auf sie Anwenden.
-
----
 
 **Funktionsübersicht**
 
@@ -201,6 +204,7 @@ Das sind die Benutzeraccounts zur Identifizierung eines Benutzers.
 | Primärschlüssel     | Ja                                                                    |
 | Sonst               | automatisch vom System verwaltet über: `GENERATED ALWAYS AS IDENTITY` |
 | Beispielwerte       | 1, 2, 3, ...                                                          |
+
 : Users.id
 
 | **username**        | Eindeutiger vom Benutzer gewählter Identifier, Unique und min. 4 Zeichen |
@@ -214,6 +218,7 @@ Das sind die Benutzeraccounts zur Identifizierung eines Benutzers.
 | Primärschlüssel     | Nein                                                                     |
 | Sonst               | -                                                                        |
 | Beispielwerte       | 'Roland', '11KidShredder', 'user.dummy'                                  |
+
 : Users.username
 
 | **passwd**          | vom Benutzer gewähltes Passwort (gehashed in SHA2), min. 8 Zeichen |
@@ -227,6 +232,7 @@ Das sind die Benutzeraccounts zur Identifizierung eines Benutzers.
 | Primärschlüssel     | Nein                                                               |
 | Sonst               | -                                                                  |
 | Beispielwerte       | '12345678', '12fdfs2e123', 'sdf-.?. .ddds'                         |
+
 : Users.passwd
 
 | **created_at**      | vom System automatisch erstellter Timestamp bei Account-Erstellung |
@@ -240,6 +246,7 @@ Das sind die Benutzeraccounts zur Identifizierung eines Benutzers.
 | Primärschlüssel     | Nein                                                               |
 | Sonst               | -                                                                  |
 | Beispielwerte       | '11.11.2021 23:59:59' ...                                          |
+
 : Users.created_at
 
 #### Photos
@@ -260,6 +267,7 @@ Dies sind die Photos die von Usern gepostet werden
 | Primärschlüssel     | Ja                                                                    |
 | Sonst               | automatisch vom System verwaltet über: `GENERATED ALWAYS AS IDENTITY` |
 | Beispielwerte       | 1, 2, 3, ...                                                          |
+
 : Photos.id
 
 | **image_url**       | Verlinkt zum geposteten Foto eines Benutzers, später ersetzt durch blob |
@@ -273,6 +281,7 @@ Dies sind die Photos die von Usern gepostet werden
 | Primärschlüssel     | Nein                                                                    |
 | Sonst               | -                                                                       |
 | Beispielwerte       | 'img/katze.jpg' ...                                                     |
+
 : Photos.image_url
 
 | **created_at**      | vom System automatisch erstellter Timestamp beim upload des Fotos |
@@ -286,6 +295,7 @@ Dies sind die Photos die von Usern gepostet werden
 | Primärschlüssel     | Nein                                                              |
 | Sonst               | -                                                                 |
 | Beispielwerte       | '11.11.2021 23:59:59' ...                                         |
+
 : Photos.created_at
 
 #### Tags
@@ -306,6 +316,7 @@ Jedes Foto kann verschieden Tags zugeordnet werden.
 | Primärschlüssel     | Ja                                                                    |
 | Sonst               | automatisch vom System verwaltet über: `GENERATED ALWAYS AS IDENTITY` |
 | Beispielwerte       | 1, 2, 3, ...                                                          |
+
 : Tags.id
 
 | **tag_name**        | Bezeichner für die verschiedenen Tags der Fotos, vorerst keine Beschränkungen |
@@ -319,6 +330,7 @@ Jedes Foto kann verschieden Tags zugeordnet werden.
 | Primärschlüssel     | Nein                                                                          |
 | Sonst               | -                                                                             |
 | Beispielwerte       | 'cat', 'drachenlordImKnast', 'WM2020' ...                                     |
+
 : Tags.tag_name
 
 | **created_at**      | vom System automatisch erstellter Timestamp bei Erstellung des Tags |
@@ -332,6 +344,7 @@ Jedes Foto kann verschieden Tags zugeordnet werden.
 | Primärschlüssel     | Nein                                                                |
 | Sonst               | -                                                                   |
 | Beispielwerte       | '11.11.2021 23:59:59' ...                                           |
+
 : Tags.created_at
 
 ### Beziehungen
@@ -352,6 +365,7 @@ Ist eine Binäre Beziehung zwischen Users und Photos.
 |        | Jeder User muss kein Foto posten               | Jeder User kann mehrere Fotos posten              |
 | Photos | 1                                              | 1                                                 |
 |        | Jedes Foto muss von einem User gepostet werden | Jedes Foto wird von höchstens einem User gepostet |
+
 : Beziehung posten
 
 #### liken
@@ -367,6 +381,7 @@ Ist eine Binäre Beziehung zwischen Users und Photos.
 |        | Jeder User muss kein Foto liken                     | Jeder User kann mehrere Fotos liken              |
 | Photos | 0                                                   | M                                                |
 |        | Jedes Foto muss nicht von einem User geliked werden | Jedes Foto kann von mehreren User geliked werden |
+
 : Beziehung liken
 
 #### comments
@@ -383,6 +398,7 @@ Ist eine Binäre Beziehung zwischen Users und Photos.
 | Photos | 0                                      | M                                          |
 |        | Jedes Foto muss nicht von einem        | Jedes Foto kann von mehreren               |
 |        | User kommentiert werden                | User kommentiert werden                    |
+
 : Beziehung comments
 
 #### photo_tags
@@ -399,6 +415,7 @@ Ist eine Binäre Beziehung zwischen Tags und Photos.
 | Photos | 0                                         | M                                             |
 |        | Jedes Foto muss nicht mit einem           | Jedes Foto kann mit mehreren                  |
 |        | Tag gekennzeichnet werden                 | Tags gekennzeichnet werden                    |
+
 : Beziehung photo_tags
 
 #### follows
@@ -415,6 +432,7 @@ Ist eine Unäre Beziehung von Users
 | Users | 0                                          | M                                             |
 |       | Jeder followee muss keinen follower        | Jeder followee kann von mehreren              |
 |       | besitzen                                   | followern gefolgt werden                      |
+
 : Beziehung follows
 
 ### Typische Operationen
@@ -599,7 +617,7 @@ Script: `read/userphotos.sql`
 
 ### Kommentare eines Fotos
 
-Der User erhält eine Auswahl aller Fotos mit Kommentaren > 0 && != NULL.
+Der User erhält eine Auswahl aller Fotos mit Kommentaren > 0 und != NULL.
 Er wählt dann ein Foto via ID aus.
 Es wird dem User nach abgeschlossener Eingabe eine Tabelle mit allen Kommentaren zu diesem Foto präsentiert,
 absteigend sortiert nach gepostetem Datum und wer diesen post erstellt hat.
@@ -608,7 +626,7 @@ Script: `read/neusteK.sql`
 
 ### Top 5 liked Fotos
 
-Eine Übersicht der Top 5 gelikten Fotos (die obersten 5 Zeilen (keine Mehrfachplazierungen) 
+Eine Übersicht der Top 5 gelikten Fotos (die obersten 5 Zeilen [keine Mehrfachplazierungen])
 
 Script: `read/top5.sql`
 
@@ -649,12 +667,13 @@ Aufrufen des Skriptes: `menu.sql` präsentiert.
 Im Hauptmenu kann zwischen folgenden Menupunkten gewählt werden, deren Auswahl in den
 jeweiligen eckigen Klammerpaar angegeben wird:
 
-| menupunkt                     | bemerkung                    | skript            |
+| Menupunkt                     | Bemerkung                    | Skript            |
 | ----------------------------- | ---------------------------- | ----------------- |
 | Datenbankstruktur bearbeiten  | Untermenu: Datenbankstruktur | `setup/menu.sql`  |
 | Benutzerauswahl / -wechsel    | Ruft das Script Login auf    | `user.sql`        |
 | Lesen spezifischer Datensätze | Untermenu: Daten lesen       | `read/menu.sql`   |
 | ändern von Datensätzen        | Untermenu: Daten ändern      | `update/menu.sql` |
+
 : Hauptmenu
 
 #### Untermenu: Datenbankstruktur
@@ -675,7 +694,8 @@ Auswahl in den jeweiligen eckigen Klammerpaar angegeben wird:
 |                      | mit einem COMMIT abgeschlossen.          |                    |
 | zurück zum Hauptmenu | Ruft das Hauptmenu auf.                  | `../menu.sql`      |
 | Anwendung beenden    | Verlässt sqlcl.                          | `../quit.sql`      |
-: Untermenu Datenbankstruktur
+
+: Untermenu - Datenbankstruktur
 
 #### Script: Benutzerauswahl / -wechsel
 
@@ -705,7 +725,8 @@ Script: `user.sql`
 | zurück               | kehrt in das Untermenu zurück.   | `menu.sql`       |
 | zurück zum Hauptmenu | Ruft das Hauptmenu auf.          | `../menu.sql`    |
 | Anwendung beenden    | Verlässt sqlcl.                  | `../quit.sql`    |
-: Untermenu Lesen
+
+: Untermenu - Datensätze Lesen
 
 #### Untermenu: ändern von Datensätzen
 
@@ -730,7 +751,8 @@ Script: `user.sql`
 | zurück               | kehrt in das Untermenu zurück.                   | `menu.sql`     |
 | zurück zum Hauptmenu | Ruft das Hauptmenu auf.                          | `../menu.sql`  |
 | Anwendung beenden    | Verlässt sqlcl.                                  | `../quit.sql`  |
-: Untermenu ändern
+
+: Untermenu - Datensätze ändern
 
 ## Quellenverzeichnis
 

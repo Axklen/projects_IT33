@@ -1,13 +1,9 @@
-# Lunar
+# SEISMIK
 
 A small (oracle)SQL project for my class at Cimdata
 
 ## includes
 
-- App
+- sql-scripts for oracle sql
 - documentation (de)
-- presentation (de)
-
-TODO:
-
-- start the project XD
+- link to presentation
