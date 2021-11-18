@@ -55,15 +55,14 @@ Die SQL-Scripte sollen:
 - Dummy Daten in die Tabellen einfügen
 - eine Menustruktur zur wiederholten Ausführung anbieten
 - man soll folgendes im Menu auswählen können
-  - Datenbank aufsetzten
+  - Tabellen leeren/erstellen
   - Datensätze löschen
   - Datensätze anlegen
   - Datenabfragen realisieren
-  - Datenbank löschen
 
 Ich habe hierbei mit Gnu/Linux - Fedora Silverblue[^e] - gearbeitet. Um den Oracle
 SQL Server aufzusetzen benutze ich [Podman](https://podman.io/) - ein Containertool, verwendet um
-den Server in einem Container aufzusetzen.
+den Server in einem Container aufzusetzen. Das Image ist von [gvenzl/oracle-xe](https://hub.docker.com/r/gvenzl/oracle-xe) 
 
 Zur Dokumentation habe ich Markdown benutzt und dieses mit
 dem Tool [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) in eine PDF-Datei gerendert.
@@ -609,7 +608,7 @@ Script: `read/neusteK.sql`
 
 ### Top 5 liked Fotos
 
-Eine Übersicht der Top 5 gelikten Fotos (Fotos mit den 5 höchsten like werten[mehrfache Platzierungen nicht ausgeschlossen]).
+Eine Übersicht der Top 5 gelikten Fotos (die obersten 5 Zeilen (keine Mehrfachplazierungen) 
 
 Script: `read/top5.sql`
 
@@ -629,7 +628,7 @@ Die Menugestaltung basiert auf der nachfolgend dargestellten Struktur.
 
 ![Menugestaltung](img/menugestaltung.pdf)
 
-Zum Starten wird das shellscript: `seismik.sh` ausgeführt. Es sorgt dafür, dass das Programm `SQLcl`
+Zum Starten wird das shellscript: `seismik.sh` ausgeführt. Es sorgt dafür, dass das Programm `sqlcl`
 ohne eine Anmeldung an die Datenbank gestartet wird. Nach erfolgreichem Start der Anwendung wird
 das Skript: `start.sql` ausgeführt.
 
@@ -650,7 +649,7 @@ Aufrufen des Skriptes: `menu.sql` präsentiert.
 Im Hauptmenu kann zwischen folgenden Menupunkten gewählt werden, deren Auswahl in den
 jeweiligen eckigen Klammerpaar angegeben wird:
 
-| Menupunkt                     | Bemerkung                    | Skript            |
+| menupunkt                     | bemerkung                    | skript            |
 | ----------------------------- | ---------------------------- | ----------------- |
 | Datenbankstruktur bearbeiten  | Untermenu: Datenbankstruktur | `setup/menu.sql`  |
 | Benutzerauswahl / -wechsel    | Ruft das Script Login auf    | `user.sql`        |

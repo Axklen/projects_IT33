@@ -18,14 +18,16 @@ PROMPT " ···································�
 PROMPT " Top 5 liked Fotos =>"
 -- bilderausgabe
 -- zeige Benutzer
-SELECT 
+SELECT
 count(l.photo_id) AS likes,
 p.image_url AS Bilder
 FROM photos p
 RIGHT JOIN likes l
 ON p.id = l.photo_id
 GROUP BY p.image_url
-ORDER BY 1 DESC;
+ORDER BY 1 DESC
+FETCH FIRST 5 ROWS ONLY 
+;
 
 
 PROMPT " "
